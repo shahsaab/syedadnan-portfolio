@@ -142,7 +142,7 @@ const SYSTEM_NODES = [
     domain: "products",
     domainLabel: "SaaS Product",
     title: "RollUp — Modern Micro-SaaS",
-    client: "Proprietary Product (US Market)",
+    client: "Personal Project (US Market)",
     period: "2026 – Present",
     featured: false,
     summary: "High-performance productivity and data aggregation micro-SaaS built for modern knowledge teams. Launched recently in 2026, tapping the US market.",
@@ -256,7 +256,7 @@ const SYSTEM_NODES = [
 // Career Project Inventory (Full 21 Projects Matrix)
 const PROJECT_INVENTORY = [
   { id: "P21", name: "SecYour — Cyber Hygiene Platform", client: "Turf / Proprietary", year: "2025–Present", domain: "Cybersecurity / SaaS", role: "Founder & Architect", stack: "Cloud Native, Graph DB, Go" },
-  { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Turf / Proprietary (US Market)", year: "2026–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
+  { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Personal Project (US Market)", year: "2026–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
   { id: "P19", name: "Colgate-Palmolive PSP Platform", client: "Colgate-Palmolive Pakistan (Turf)", year: "2024–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
   { id: "P18", name: "ERA Connect & ERA Lite", client: "AKU Hospital, LattLiv, 70+ Businesses", year: "2018–Present", domain: "Healthcare / Distributed", role: "Co-Founder & Chief Architect", stack: ".NET, WinForms, WinUI3, MSSQL Sync" },
   { id: "P17", name: "AMAX Insurance Serverless Modernization", client: "AMAX Insurance (USA)", year: "2023–2024", domain: "Cloud & AI", role: "Solutions Architect", stack: "AWS Lambda, Rekognition, Textract" },
