@@ -78,14 +78,14 @@ const SYSTEM_NODES = [
     domainLabel: "Enterprise FMCG",
     title: "Colgate-Palmolive PSP Visibility Platform",
     client: "Colgate-Palmolive Pakistan",
-    period: "2020 – Present",
+    period: "2024 – Present",
     featured: true,
-    summary: "Nationwide Permanent Sales Promotion (PSP) and merchandiser tracking platform with polygon geofencing, real-time telemetry, and Okta corporate SSO integration.",
+    summary: "Nationwide Permanent Sales Promotion (PSP) and merchandiser tracking platform with polygon geofencing, real-time telemetry, and Okta corporate SSO integration. Live since Nov 2024.",
     tags: ["ASP.NET", "MSSQL", "Realtime GPS", "Geofencing", "Okta SSO", "Enterprise RBAC"],
     metrics: {
       stat1: { val: "Nationwide", lbl: "FMCG Field Deployment" },
       stat2: { val: "Real-Time", lbl: "Geofenced Verification" },
-      stat3: { val: "6+ Years", lbl: "Continuous Partnership" }
+      stat3: { val: "Nov 2024", lbl: "Production Go-Live" }
     },
     diagram: `[ Field Merchandisers / Promoters ]
                │ (Mobile GPS Check-in)
@@ -99,7 +99,7 @@ const SYSTEM_NODES = [
 [ Real-Time Campaign Allocation & Audit Analytics ]`,
     problem: `Colgate-Palmolive runs nationwide merchandising campaigns across thousands of retail stores. Traditional reporting suffered from attendance falsification, ghost visits, delayed audit trails, and isolated user authentication systems.`,
     decision: `Built an enterprise-grade platform combining mobile field capture with strict polygon geofencing to mathematically verify physical presence before logging promotional audits. Integrated Colgate's corporate Okta SSO for automated identity federation and role-based access control.`,
-    impact: `Delivered 100% auditable promotional compliance across Pakistan. Has served as Colgate-Palmolive's trusted field operations partner for six consecutive years.`
+    impact: `Scoping began in late 2023, development commenced in 2024, and the system achieved production go-live in November 2024. Delivers 100% auditable promotional compliance across Pakistan, continuously upgraded and maintained with real-time GPS polygon geofencing and corporate Okta SSO.`
   },
   {
     id: "NODE_04_AMAX",
@@ -254,7 +254,7 @@ const SYSTEM_NODES = [
 const PROJECT_INVENTORY = [
   { id: "P21", name: "SecYour — Cyber Hygiene Platform", client: "Turf / Proprietary", year: "2025–Present", domain: "Cybersecurity / SaaS", role: "Founder & Architect", stack: "Cloud Native, Graph DB, Go" },
   { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Turf / Proprietary (US Market)", year: "2024–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
-  { id: "P19", name: "Colgate-Palmolive PSP Modernization", client: "Colgate-Palmolive Pakistan", year: "2020–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
+  { id: "P19", name: "Colgate-Palmolive PSP Platform", client: "Colgate-Palmolive Pakistan", year: "2024–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
   { id: "P18", name: "ERA Connect & ERA Lite", client: "AKU Hospital, LattLiv, 70+ Businesses", year: "2018–Present", domain: "Healthcare / Distributed", role: "Co-Founder & Chief Architect", stack: ".NET, WinForms, WinUI3, MSSQL Sync" },
   { id: "P17", name: "AMAX Insurance Serverless Modernization", client: "AMAX Insurance (USA)", year: "2023–2024", domain: "Cloud & AI", role: "Solutions Architect", stack: "AWS Lambda, Rekognition, Textract" },
   { id: "P16", name: "Grid Safety DevOps & Cloud", client: "Grid Safety (Australia) / Virtuosoft", year: "2021–2023", domain: "DevOps / IoT", role: "Principal DevOps Engineer", stack: "AWS ECS, Docker, GitHub Actions" },
