@@ -27,15 +27,51 @@
         </div>
       </a>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#systems-map" class="nav-link">Systems Map</a></li>
-          <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
-          <li><a href="#products" class="nav-link">Products & SaaS</a></li>
-          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
-          <li><a href="#career-matrix" class="nav-link">Project Matrix</a></li>
-        </ul>
-      </nav>
+      <!-- Stacked Systems Index Navigation -->
+      <div class="nav-dropdown-wrapper">
+        <button class="nav-dropdown-trigger" id="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <span>⬡ Architecture Index</span>
+          <span class="dropdown-chevron">▼</span>
+        </button>
+        <div class="nav-dropdown-menu" id="nav-dropdown-menu">
+          <div class="dropdown-header mono">EXPLORE ARCHITECTURE DOMAINS</div>
+          <a href="#systems-map" class="dropdown-item">
+            <span class="dropdown-item-icon">🌐</span>
+            <div>
+              <div class="dropdown-item-title">Systems Topology Map</div>
+              <div class="dropdown-item-desc">Interactive nodes across Fintech, AI, Enterprise & Health</div>
+            </div>
+          </a>
+          <a href="#case-studies" class="dropdown-item">
+            <span class="dropdown-item-icon">⚡</span>
+            <div>
+              <div class="dropdown-item-title">Deep-Dive Case Studies</div>
+              <div class="dropdown-item-desc">State Bank RTGS & Colgate-Palmolive (Turf)</div>
+            </div>
+          </a>
+          <a href="#products" class="dropdown-item">
+            <span class="dropdown-item-icon">🚀</span>
+            <div>
+              <div class="dropdown-item-title">Products & SaaS</div>
+              <div class="dropdown-item-desc">RollUp (2026 Micro-SaaS) & SecYour Cloud Security</div>
+            </div>
+          </a>
+          <a href="#philosophy" class="dropdown-item">
+            <span class="dropdown-item-icon">⚖️</span>
+            <div>
+              <div class="dropdown-item-title">Engineering Philosophy</div>
+              <div class="dropdown-item-desc">Architectural principles, zero safety nets & trade-offs</div>
+            </div>
+          </a>
+          <a href="#career-matrix" class="dropdown-item">
+            <span class="dropdown-item-icon">📊</span>
+            <div>
+              <div class="dropdown-item-title">Project & Career Matrix</div>
+              <div class="dropdown-item-desc">13+ years audit log across roles, stacks & clients</div>
+            </div>
+          </a>
+        </div>
+      </div>
 
       <div class="header-actions">
         <div class="status-pill">
@@ -49,6 +85,36 @@
     </div>
   </header>
 
+  <!-- Floating Architecture Timeline Dock (Linear / Vercel style) -->
+  <nav class="timeline-nav-dock" id="timeline-dock" aria-label="Quick Timeline Navigation">
+    <div class="dock-inner">
+      <a href="#systems-map" class="dock-link" data-section="systems-map">
+        <span class="dock-icon">🌐</span>
+        <span>Topology</span>
+      </a>
+      <span class="dock-divider">/</span>
+      <a href="#case-studies" class="dock-link" data-section="case-studies">
+        <span class="dock-icon">⚡</span>
+        <span>Case Studies</span>
+      </a>
+      <span class="dock-divider">/</span>
+      <a href="#products" class="dock-link" data-section="products">
+        <span class="dock-icon">🚀</span>
+        <span>Products</span>
+      </a>
+      <span class="dock-divider">/</span>
+      <a href="#philosophy" class="dock-link" data-section="philosophy">
+        <span class="dock-icon">⚖️</span>
+        <span>Philosophy</span>
+      </a>
+      <span class="dock-divider">/</span>
+      <a href="#career-matrix" class="dock-link" data-section="career-matrix">
+        <span class="dock-icon">📊</span>
+        <span>Matrix</span>
+      </a>
+    </div>
+  </nav>
+
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-nav" id="mobile-nav">
     <ul class="mobile-nav-links">
@@ -57,9 +123,11 @@
       <li><a href="#products" class="mobile-nav-link">Products & SaaS</a></li>
       <li><a href="#philosophy" class="mobile-nav-link">Philosophy</a></li>
       <li><a href="#career-matrix" class="mobile-nav-link">Project Matrix</a></li>
-      <li><a href="cv.html" target="_blank" class="mobile-nav-link" style="color: var(--enterprise);">View Executive CV (HTML) ↗</a></li>
-      <li><a href="#contact" class="mobile-nav-link" style="color: var(--enterprise);">Contact / Hire</a></li>
     </ul>
+    <div class="mobile-nav-actions">
+      <a href="cv.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">Executive CV ↗</a>
+      <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Connect / Hire</a>
+    </div>
   </div>
 
   <!-- Hero Section -->
@@ -235,23 +303,43 @@
                 The State Bank of Pakistan issued a strict mandate: commercial banks had to implement a compliant Real-Time Gross Settlement (RTGS) system. Unlike batch processing, RTGS handles large-value interbank settlements in real-time, with immediate finality and zero undo.
               </p>
               
-              <div class="arch-diagram-box">Branch Staff  ──>  Branch Manager Approval
-                          │
-                          ▼
-            Treasury Back-Office (Dual Approval)
-                          │
-                          ▼
-             Background Processing Windows Service
-                          │
-             ┌────────────┴────────────┐
-             ▼                         ▼
-   SWIFT MT102/103 Creation    Store-and-Forward (SAF) Queue
-             │                         │
-             ▼                         ▼
-      SBP PRISM Server   ◄────── (Retry / No Silent Loss)
-             │
-             ▼
-   Account Settlement: Requestor ──> GL + Taxes + FED</div>
+              <!-- Architecture Infographic -->
+              <div class="case-study-infographic-card">
+                <div class="infographic-top-bar">
+                  <span class="infographic-tag">⬡ ARCHITECTURAL BLUEPRINT</span>
+                  <span class="expand-hint mono">CLICK TO EXPAND 🔍</span>
+                </div>
+                <a href="assets/images/rtgs-infographic.jpg" class="infographic-img-link" onclick="openInfographicLightbox('assets/images/rtgs-infographic.jpg', 'RTGS & PRI — Real-Time Interbank Settlement Architecture'); return false;">
+                  <img src="assets/images/rtgs-infographic.jpg" alt="RTGS and PRI Interbank Settlement Architecture Infographic" class="case-study-infographic-img" loading="lazy" />
+                  <div class="infographic-hover-overlay">
+                    <span>🔍 Expand Infographic</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Collapsible ASCII Spec -->
+              <details class="arch-spec-details" style="margin-top: 12px; margin-bottom: 16px;">
+                <summary class="mono" style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
+                  <span>▸ View Raw ASCII Dataflow Topology</span>
+                </summary>
+                <div class="arch-diagram-box" style="margin-top: 8px;">Branch Staff  ──>  Branch Manager Approval
+                            │
+                            ▼
+              Treasury Back-Office (Dual Approval)
+                            │
+                            ▼
+               Background Processing Windows Service
+                            │
+               ┌────────────┴────────────┐
+               ▼                         ▼
+     SWIFT MT102/103 Creation    Store-and-Forward (SAF) Queue
+               │                         │
+               ▼                         ▼
+        SBP PRISM Server   ◄────── (Retry / No Silent Loss)
+               │
+               ▼
+     Account Settlement: Requestor ──> GL + Taxes + FED</div>
+              </details>
 
               <p style="margin-top: 16px; font-size: 14px;">
                 Near go-live, the scope expanded to absorb the <strong>Pakistan Remittance Initiative (PRI)</strong> — turning the platform into a dual-purpose financial backbone routing inbound international remittances away from informal networks.
@@ -322,7 +410,26 @@
                 Launching ERA across retail chains revealed a harsh reality: rural network infrastructure suffered chronic drops and degraded connections ("Lie-Fi"). Browser service workers and LocalStorage buckled under complex inventory workloads. In hospital pharmacies operating 24/7, cashier downtime is a critical safety failure.
               </p>
 
-              <div class="arch-diagram-box">[ Cloud Master (Azure) ]
+              <!-- Architecture Infographic -->
+              <div class="case-study-infographic-card">
+                <div class="infographic-top-bar">
+                  <span class="infographic-tag">⬡ ARCHITECTURAL BLUEPRINT</span>
+                  <span class="expand-hint mono">CLICK TO EXPAND 🔍</span>
+                </div>
+                <a href="assets/images/era-infographic.jpg" class="infographic-img-link" onclick="openInfographicLightbox('assets/images/era-infographic.jpg', 'ERA — Distributed Offline-First Healthcare Platform Architecture'); return false;">
+                  <img src="assets/images/era-infographic.jpg" alt="ERA Distributed Offline-First Healthcare Architecture Infographic" class="case-study-infographic-img" loading="lazy" />
+                  <div class="infographic-hover-overlay">
+                    <span>🔍 Expand Infographic</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Collapsible ASCII Spec -->
+              <details class="arch-spec-details" style="margin-top: 12px; margin-bottom: 16px;">
+                <summary class="mono" style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
+                  <span>▸ View Raw ASCII Dataflow Topology</span>
+                </summary>
+                <div class="arch-diagram-box" style="margin-top: 8px;">[ Cloud Master (Azure) ]
   └── Primary MSSQL Master Database
              ▲
              │ [ Bi-Directional Custom Windows Sync Service ]
@@ -331,6 +438,7 @@
 [ Edge Terminals: AKU Hospital Pharmacies & Clinics ]
   ├── Local MSSQL Instance (Zero-Latency Local Transaction Commit)
   └── WinUI3 / WinForms Terminal (100% Offline Capability)</div>
+              </details>
 
               <p style="margin-top: 16px; font-size: 14px;">
                 I stopped fighting browser limits and deployed a local database topology: edge stations run a local MSSQL instance with stored procedure journal queues and background Windows synchronization daemons that reconcile with the cloud master without human intervention.
@@ -399,16 +507,36 @@
                 Colgate-Palmolive runs nationwide Permanent Sales Promotions (PSP) across thousands of retail outlets. Field merchandising campaigns previously suffered from GPS spoofing, unverified physical store presence, manual reconciliation delays, and disconnected corporate identity management.
               </p>
 
-              <div class="arch-diagram-box">[ Merchandiser Mobile App ] ──> [ Real-Time GPS Coordinates ]
-                                            │
-                                            ▼
-[ Store Polygon Geofence Engine ] ──> [ Fraud / Teleport Filter ]
-                                            │
-                                            ▼
-[ Enterprise ASP.NET Platform ] ◄─── [ Corporate Okta SSO ]
-                                            │
-                                            ▼
-[ Automated Campaign Allocation & Audit Analytics ]</div>
+              <!-- Architecture Infographic -->
+              <div class="case-study-infographic-card">
+                <div class="infographic-top-bar">
+                  <span class="infographic-tag">⬡ ARCHITECTURAL BLUEPRINT</span>
+                  <span class="expand-hint mono">CLICK TO EXPAND 🔍</span>
+                </div>
+                <a href="assets/images/colgate-infographic.jpg" class="infographic-img-link" onclick="openInfographicLightbox('assets/images/colgate-infographic.jpg', 'Colgate-Palmolive — Nationwide Field Visibility & Okta SSO Architecture'); return false;">
+                  <img src="assets/images/colgate-infographic.jpg" alt="Colgate-Palmolive Field Telemetry and Geofencing Architecture Infographic" class="case-study-infographic-img" loading="lazy" />
+                  <div class="infographic-hover-overlay">
+                    <span>🔍 Expand Infographic</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Collapsible ASCII Spec -->
+              <details class="arch-spec-details" style="margin-top: 12px; margin-bottom: 16px;">
+                <summary class="mono" style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
+                  <span>▸ View Raw ASCII Dataflow Topology</span>
+                </summary>
+                <div class="arch-diagram-box" style="margin-top: 8px;">[ Merchandiser Mobile App ] ──> [ Real-Time GPS Coordinates ]
+                                              │
+                                              ▼
+  [ Store Polygon Geofence Engine ] ──> [ Fraud / Teleport Filter ]
+                                              │
+                                              ▼
+  [ Enterprise ASP.NET Platform ] ◄─── [ Corporate Okta SSO ]
+                                              │
+                                              ▼
+  [ Automated Campaign Allocation & Audit Analytics ]</div>
+              </details>
             </div>
 
             <div>
@@ -464,20 +592,40 @@
                 US automotive insurance claims traditionally required manual inspection of accident photographs and multi-page police reports, causing severe triage latency and human data entry mistakes.
               </p>
 
-              <div class="arch-diagram-box">[ Incident Photos & Police Reports ] ──> [ Amazon S3 Ingestion ]
-                                                     │
-                                                     ▼
-                                          [ AWS Lambda Orchestrator ]
-                           ┌─────────────────────────┴─────────────────────────┐
-                           ▼                                                   ▼
-                [ Amazon Rekognition ]                                [ Amazon Textract ]
-                (Vehicle Damage Vision)                             (Police Document OCR)
-                           └─────────────────────────┬─────────────────────────┘
-                                                     ▼
-                                      [ EventBridge Decision Rules ]
-                                                     │
-                                                     ▼
-                                    [ Fast-Track Settlement / Adjuster ]</div>
+              <!-- Architecture Infographic -->
+              <div class="case-study-infographic-card">
+                <div class="infographic-top-bar">
+                  <span class="infographic-tag">⬡ ARCHITECTURAL BLUEPRINT</span>
+                  <span class="expand-hint mono">CLICK TO EXPAND 🔍</span>
+                </div>
+                <a href="assets/images/amax-infographic.jpg" class="infographic-img-link" onclick="openInfographicLightbox('assets/images/amax-infographic.jpg', 'AMAX — AWS Event-Driven Serverless AI Claims Pipeline Architecture'); return false;">
+                  <img src="assets/images/amax-infographic.jpg" alt="AWS Event-Driven Serverless AI Claims Pipeline Architecture Infographic" class="case-study-infographic-img" loading="lazy" />
+                  <div class="infographic-hover-overlay">
+                    <span>🔍 Expand Infographic</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Collapsible ASCII Spec -->
+              <details class="arch-spec-details" style="margin-top: 12px; margin-bottom: 16px;">
+                <summary class="mono" style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
+                  <span>▸ View Raw ASCII Dataflow Topology</span>
+                </summary>
+                <div class="arch-diagram-box" style="margin-top: 8px;">[ Incident Photos & Police Reports ] ──> [ Amazon S3 Ingestion ]
+                                                       │
+                                                       ▼
+                                            [ AWS Lambda Orchestrator ]
+                             ┌─────────────────────────┴─────────────────────────┐
+                             ▼                                                   ▼
+                  [ Amazon Rekognition ]                                [ Amazon Textract ]
+                  (Vehicle Damage Vision)                             (Police Document OCR)
+                             └─────────────────────────┬─────────────────────────┘
+                                                       ▼
+                                        [ EventBridge Decision Rules ]
+                                                       │
+                                                       ▼
+                                      [ Fast-Track Settlement / Adjuster ]</div>
+              </details>
             </div>
 
             <div>
@@ -758,6 +906,20 @@
       <div class="drawer-content" id="drawer-body-content">
         <!-- Injected dynamically on node click -->
       </div>
+    </div>
+  </div>
+
+  <!-- Infographic Lightbox Modal -->
+  <div class="infographic-lightbox" id="infographic-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-header">
+      <div class="lightbox-title" id="lightbox-title">Architecture Infographic</div>
+      <div class="lightbox-controls">
+        <a id="lightbox-raw-link" href="#" target="_blank" class="btn btn-outline btn-sm">Open Full Image ↗</a>
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      </div>
+    </div>
+    <div class="lightbox-img-wrapper">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Architecture Infographic" />
     </div>
   </div>
 

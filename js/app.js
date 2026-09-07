@@ -13,6 +13,7 @@ const SYSTEM_NODES = [
     client: "Bank Alfalah / State Bank of Pakistan",
     period: "2015 – 2018",
     featured: true,
+    infographic: "assets/images/rtgs-infographic.jpg",
     summary: "Central bank compliant Real-Time Gross Settlement platform processing billions in daily interbank transfers under strict SBP mandate. Integrated PRI remittance channel near go-live.",
     tags: ["ASP.NET", "MSSQL Server", "Windows Services", "SWIFT MT102/103", "SAF Queuing", "Real-Time"],
     metrics: {
@@ -51,6 +52,7 @@ const SYSTEM_NODES = [
     client: "Aga Khan University Hospital (AKU) / LattLiv",
     period: "2018 – Present",
     featured: true,
+    infographic: "assets/images/era-infographic.jpg",
     summary: "High-resilience distributed retail and hospital pharmacy infrastructure engineered to defeat persistent network outages ('Lie-Fi'). Powering 40+ business locations across AKU.",
     tags: [".NET", "WinUI3", "MSSQL Distributed Sync", "WinForms", "Azure SQL Sync", "REST APIs"],
     metrics: {
@@ -80,6 +82,7 @@ const SYSTEM_NODES = [
     client: "Colgate-Palmolive Pakistan (Delivered by Turf)",
     period: "2024 – Present",
     featured: true,
+    infographic: "assets/images/colgate-infographic.jpg",
     summary: "Nationwide Permanent Sales Promotion (PSP) and merchandiser tracking platform with polygon geofencing, real-time telemetry, and Okta corporate SSO integration. Live since Nov 2024.",
     tags: ["ASP.NET", "MSSQL", "Realtime GPS", "Geofencing", "Okta SSO", "Enterprise RBAC"],
     metrics: {
@@ -109,6 +112,7 @@ const SYSTEM_NODES = [
     client: "AMAX Insurance (USA)",
     period: "2023 – 2024",
     featured: true,
+    infographic: "assets/images/amax-infographic.jpg",
     summary: "Automated automotive claims modernization leveraging AWS Lambda serverless orchestration, Amazon Rekognition for damage triage, and Amazon Textract for policy OCR.",
     tags: ["AWS Lambda", "Amazon Rekognition", "Amazon Textract", "EventBridge", "DynamoDB", "S3"],
     metrics: {
@@ -253,29 +257,28 @@ const SYSTEM_NODES = [
   }
 ];
 
-// Career Project Inventory (Full 21 Projects Matrix)
+// Career Project Inventory (Authentic 20 Projects Matrix)
 const PROJECT_INVENTORY = [
-  { id: "P21", name: "SecYour — Cyber Hygiene Platform", client: "Turf / Proprietary", year: "2025–Present", domain: "Cybersecurity / SaaS", role: "Founder & Architect", stack: "Cloud Native, Graph DB, Go" },
-  { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Personal Project (US Market)", year: "2026–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
-  { id: "P19", name: "Colgate-Palmolive PSP Platform", client: "Colgate-Palmolive Pakistan (Turf)", year: "2024–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
-  { id: "P18", name: "ERA Connect & ERA Lite", client: "AKU Hospital, LattLiv, 70+ Businesses", year: "2018–Present", domain: "Healthcare / Distributed", role: "Co-Founder & Chief Architect", stack: ".NET, WinForms, WinUI3, MSSQL Sync" },
-  { id: "P17", name: "AMAX Insurance Serverless Modernization", client: "AMAX Insurance (USA)", year: "2023–2024", domain: "Cloud & AI", role: "Solutions Architect", stack: "AWS Lambda, Rekognition, Textract" },
-  { id: "P16", name: "Grid Safety DevOps & Cloud", client: "Grid Safety (Australia) / Virtuosoft", year: "2021–2023", domain: "DevOps / IoT", role: "Principal DevOps Engineer", stack: "AWS ECS, Docker, GitHub Actions" },
-  { id: "P15", name: "Wholesale eCommerce Platform", client: "Enterprise Retailer", year: "2022", domain: "eCommerce", role: "Architect & Lead", stack: "ASP.NET Core, MSSQL, Redis" },
-  { id: "P14", name: "Supply Chain Warehouse Management", client: "Distribution Network", year: "2021", domain: "Logistics", role: "Solutions Architect", stack: ".NET, MSSQL, Barcode APIs" },
-  { id: "P13", name: "B2B Vendor Portal", client: "FMCG Supplier", year: "2020", domain: "Enterprise", role: "Full Stack Architect", stack: "ASP.NET, MSSQL, REST" },
-  { id: "P12", name: "Restaurant POS & Kitchen Display", client: "Hospitality Group", year: "2019", domain: "Retail / POS", role: "Technical Lead", stack: "WinForms, MSSQL, Hardware SDKs" },
-  { id: "P11", name: "Turf ERP Core Engine", client: "Turf IT Solutions", year: "2018–2019", domain: "Enterprise", role: "Founding Architect", stack: "C#, ASP.NET, MSSQL" },
-  { id: "P10", name: "Real-Time Gross Settlement (RTGS)", client: "Bank Alfalah / State Bank of Pakistan", year: "2015–2018", domain: "Banking / Fintech", role: "Software Engineer (.NET)", stack: "ASP.NET, MSSQL, SWIFT, Windows Services" },
-  { id: "P09", name: "Pakistan Remittance Initiative (PRI)", client: "Bank Alfalah / SBP / Overseas Min.", year: "2017–2018", domain: "Banking / Remittance", role: "Software Engineer", stack: "ASP.NET, SWIFT MT102/103, MSSQL" },
-  { id: "P08", name: "MCB Mobile Banking Gateway", client: "Muslim Commercial Bank (MCB)", year: "2016–2017", domain: "Banking", role: "Integration Engineer", stack: "ASP.NET, Web Services, Encryption" },
-  { id: "P07", name: "FCMS (Faculty & Course Management System)", client: "Aptech (via Axis Solutions)", year: "2014–2015", domain: "Academic / Desktop", role: "Software Engineer", stack: "C#, WinForms, MSSQL, Stored Procedures" },
-  { id: "P06", name: "Allied Bank Document Archive Vault", client: "Allied Bank Limited", year: "2015", domain: "Banking / Compliance", role: "Engineer", stack: "ASP.NET, MSSQL, Secure Blob" },
-  { id: "P05", name: "Fleet & Fuel Management System", client: "Logistics Fleet Operator", year: "2014–2015", domain: "Logistics", role: "Software Engineer", stack: "C#, WinForms, GPS Hardware SDK" },
-  { id: "P04", name: "RMS Retail Management Suite", client: "Retail Chain (UK)", year: "2013–2014", domain: "Retail Systems", role: "Junior Software Engineer", stack: ".NET, MSSQL, Crystal Reports" },
-  { id: "P03", name: "Aptech Technical Training & Faculty", client: "Aptech Computer Education", year: "2013–2014", domain: "Education / Training", role: "Faculty & Technical Trainer", stack: "C#, OOP, SQL Server, Web Tech" },
-  { id: "P02", name: "Inventory & Billing Windows System", client: "Distribution Client", year: "2012–2013", domain: "Desktop / ERP", role: "Software Developer", stack: "C#, WinForms, SQL Server" },
-  { id: "P01", name: "School Management System", client: "Educational Institution", year: "2012", domain: "Education / Web", role: "Junior Developer", stack: "PHP, MySQL, HTML/CSS" }
+  { id: "P20", name: "RollUp — Modern Micro-SaaS", client: "Personal Project (US Market)", year: "2026–Present", domain: "Micro-SaaS / Edge", role: "Founder & Architect", stack: "Next.js, Edge Runtime, Supabase, Stripe" },
+  { id: "P19", name: "SecYour — Cyber Hygiene Platform", client: "Proprietary Venture (Stealth)", year: "Architecture Phase", domain: "Cybersecurity / SaaS", role: "Founder & Architect", stack: "Cloud Native, Agentless Telemetry, Graph DB" },
+  { id: "P18", name: "Colgate-Palmolive PSP Visibility Platform", client: "Colgate-Palmolive Pakistan (Turf)", year: "2024–Present", domain: "Enterprise / FMCG", role: "Principal Solutions Architect", stack: "ASP.NET Core, MSSQL, GPS Geofencing, Okta SSO" },
+  { id: "P17", name: "AMAX Insurance Serverless AI Claims", client: "AMAX Insurance (USA) / Virtuosoft", year: "2023–2024", domain: "Cloud & Serverless AI", role: "Solutions Architect", stack: "AWS Lambda, Rekognition, Textract, EventBridge, S3" },
+  { id: "P16", name: "Grid Safety Industrial IoT DevOps", client: "Grid Safety (Australia) / Virtuosoft", year: "2021–2023", domain: "Cloud & DevOps", role: "Solutions Architect & DevOps Lead", stack: "Docker, AWS ECS, GitHub Actions, Linux" },
+  { id: "P15", name: "SD Foods Supply Chain & Logistics", client: "SD Foods (France) / Virtuosoft", year: "2022", domain: "Supply Chain", role: "Solutions Architect", stack: ".NET Core, MSSQL, Resilient Sync" },
+  { id: "P14", name: "Neogies Energy Management Platform", client: "Neogies (France) / Virtuosoft", year: "2022", domain: "Energy & Utility", role: "Solutions Architect", stack: ".NET, Cloud APIs, Dynamic Pricing Engine" },
+  { id: "P13", name: "Colgate-Palmolive Gifts & POSM Management", client: "Colgate-Palmolive Pakistan (Turf)", year: "2022", domain: "Trade Marketing", role: "Solutions Architect", stack: "ASP.NET, MSSQL, Inventory Tracking Reports" },
+  { id: "P12", name: "QMS (Campus Queue Management System)", client: "Bahria University", year: "2021", domain: "Campus Systems", role: "Solutions Architect", stack: "C#, WinForms, Socket Communications, MSSQL" },
+  { id: "P11", name: "Demand-Based Replenishment (DBR)", client: "English Biscuits Manufacturers (EBM)", year: "2019–2020", domain: "FMCG / Supply Chain", role: "Solutions Architect (Consultant)", stack: "C#, ASP.NET, SAP BAPI/RFC, MSSQL" },
+  { id: "P10", name: "ERA Lite POS & Retail Client", client: "Turf (Mentored Junior Developer)", year: "2019", domain: "Retail / POS", role: "Architect & Engineering Mentor", stack: "C#, WinForms, Local SQLite/MSSQL, Serial SDKs" },
+  { id: "P09", name: "ERA Enterprise Healthcare & Distributed Platform", client: "Aga Khan University Hospital (AKU) & Turf", year: "2018–Present", domain: "Healthcare / Distributed", role: "Co-Founder & Chief Solutions Architect", stack: ".NET, WinUI3, MSSQL Distributed Sync, Azure SQL" },
+  { id: "P08", name: "Distributor Claim Management System", client: "Engro Corporation", year: "2018–2019", domain: "FMCG / Finance", role: "Technical Lead (Consultant)", stack: "ASP.NET, MSSQL, Financial Stored Procedures" },
+  { id: "P07", name: "Pakistan Remittance Initiative (PRI)", client: "Bank Alfalah / State Bank of Pakistan", year: "2017–2018", domain: "Banking / Remittance", role: "Software Engineer (.NET)", stack: "ASP.NET, SWIFT MT102/103, MSSQL" },
+  { id: "P06", name: "Alfalah Payment Gateway", client: "Bank Alfalah", year: "2016–2018", domain: "Banking / Payments", role: "Software Engineer (.NET)", stack: "ASP.NET, Web Services, HSM Tokenization, Mastercard APIs" },
+  { id: "P05", name: "Alfalah Orbit Loyalty & Rewards Platform", client: "Bank Alfalah (with Mastercard)", year: "2016–2018", domain: "Banking / Loyalty", role: "Software Engineer (.NET)", stack: "ASP.NET, REST APIs, Mastercard Loyalty Engine, SSO" },
+  { id: "P04", name: "Real-Time Gross Settlement (RTGS)", client: "Bank Alfalah & State Bank of Pakistan", year: "2015–2018", domain: "Banking / Central Banking", role: "Software Engineer (.NET)", stack: "ASP.NET, MSSQL, Windows Services, Store-and-Forward (SAF)" },
+  { id: "P03", name: "FCMS (Faculty & Course Management System)", client: "Aptech Learning Pakistan (via Axis Solutions)", year: "2014–2015", domain: "Education / Operations", role: "Software Engineer", stack: "C#, WinForms, MSSQL, Stored Procedures, Crystal Reports" },
+  { id: "P02", name: "Technical Faculty & Software Trainer", client: "Aptech Computer Education", year: "2013–2014", domain: "Technical Education", role: "Faculty & Technical Trainer", stack: "C#, OOP, SQL Server, Software Architecture" },
+  { id: "P01", name: "RMS (Retail Management System)", client: "Freelance (UK Client)", year: "2013", domain: "Retail Systems", role: "Freelance Software Developer", stack: "C# WinForms, MSSQL, Custom UI Engine" }
 ];
 
 // Document Ready Initialization
@@ -288,6 +291,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCircuitCanvas();
   initContactActions();
   initMobileNav();
+  initNavDropdown();
+  initInfographicLightbox();
   initScrollSpy();
 });
 
@@ -486,7 +491,26 @@ function openInspectionDrawer(nodeId) {
       <div class="case-section-heading">
         <span>⬡ Architecture Topology & Dataflow</span>
       </div>
-      <div class="arch-diagram-box">${escapeHtml(node.diagram)}</div>
+      ${node.infographic ? `
+        <div class="case-study-infographic-card" style="margin-bottom: 14px;">
+          <div class="infographic-top-bar">
+            <span class="infographic-tag">⬡ ARCHITECTURAL BLUEPRINT</span>
+            <span class="expand-hint mono">CLICK TO EXPAND 🔍</span>
+          </div>
+          <a href="${node.infographic}" class="infographic-img-link" onclick="openInfographicLightbox('${node.infographic}', '${escapeHtml(node.title)} Infographic'); return false;">
+            <img src="${node.infographic}" alt="${escapeHtml(node.title)} Infographic" class="case-study-infographic-img" loading="lazy" />
+            <div class="infographic-hover-overlay">
+              <span>🔍 Expand Blueprint</span>
+            </div>
+          </a>
+        </div>
+      ` : ''}
+      <details class="arch-spec-details" ${node.infographic ? '' : 'open'} style="margin-bottom: 18px;">
+        <summary class="mono" style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
+          <span>${node.infographic ? '▸ View Raw ASCII Dataflow Topology' : '▾ Architecture Dataflow Diagram'}</span>
+        </summary>
+        <div class="arch-diagram-box" style="margin-top: 8px;">${escapeHtml(node.diagram)}</div>
+      </details>
     </div>
 
     <!-- Problem & Context -->
@@ -631,14 +655,66 @@ function initMobileNav() {
   }
 }
 
-// Scroll Spy for Nav Header
+// Architecture Index Dropdown Logic
+function initNavDropdown() {
+  const trigger = document.getElementById("nav-dropdown-trigger");
+  const menu = document.getElementById("nav-dropdown-menu");
+  if (!trigger || !menu) return;
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains("open");
+    menu.classList.toggle("open", !isOpen);
+    trigger.classList.toggle("active", !isOpen);
+    trigger.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  // Close when clicking an item
+  menu.querySelectorAll(".dropdown-item").forEach(item => {
+    item.addEventListener("click", () => {
+      menu.classList.remove("open");
+      trigger.classList.remove("active");
+      trigger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("open");
+      trigger.classList.remove("active");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      menu.classList.remove("open");
+      trigger.classList.remove("active");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+// Scroll Spy for Nav Header & Floating Timeline Dock
 function initScrollSpy() {
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const dockLinks = document.querySelectorAll(".dock-link");
+  const timelineDock = document.getElementById("timeline-dock");
 
   window.addEventListener("scroll", () => {
     let current = "";
-    const scrollPos = window.scrollY + 100;
+    const scrollPos = window.scrollY + 120;
+
+    // Show/hide floating timeline dock after passing hero
+    if (timelineDock) {
+      if (window.scrollY > 350) {
+        timelineDock.classList.add("visible");
+      } else {
+        timelineDock.classList.remove("visible");
+      }
+    }
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -648,11 +724,54 @@ function initScrollSpy() {
       }
     });
 
-    navLinks.forEach(link => {
+    dockLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
+      if (link.dataset.section === current || link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
       }
     });
   });
+}
+
+// Infographic Lightbox Handlers
+function initInfographicLightbox() {
+  const lightbox = document.getElementById("infographic-lightbox");
+  const closeBtn = document.getElementById("lightbox-close-btn");
+  if (!lightbox) return;
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => closeInfographicLightbox());
+  }
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeInfographicLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      closeInfographicLightbox();
+    }
+  });
+}
+
+function openInfographicLightbox(imgSrc, title) {
+  const lightbox = document.getElementById("infographic-lightbox");
+  const img = document.getElementById("lightbox-img");
+  const titleEl = document.getElementById("lightbox-title");
+  const rawLink = document.getElementById("lightbox-raw-link");
+  if (!lightbox || !img) return;
+
+  img.src = imgSrc;
+  if (titleEl) titleEl.textContent = title || "Architecture Infographic";
+  if (rawLink) rawLink.href = imgSrc;
+
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden", "false");
+}
+
+function closeInfographicLightbox() {
+  const lightbox = document.getElementById("infographic-lightbox");
+  if (!lightbox) return;
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
 }
