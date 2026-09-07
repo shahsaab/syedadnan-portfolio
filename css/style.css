@@ -600,6 +600,11 @@ code,
   margin-bottom: 38px;
 }
 
+.hero-subtitle strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
