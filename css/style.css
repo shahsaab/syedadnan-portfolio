@@ -13,18 +13,18 @@
   --bg-elevated: #1e2a42;
   --bg-glass: rgba(16, 22, 36, 0.78);
   --bg-glass-heavy: rgba(10, 14, 23, 0.94);
-  
+
   /* Borders & Dividers */
   --border-subtle: rgba(148, 163, 184, 0.12);
   --border-medium: rgba(148, 163, 184, 0.22);
   --border-bright: rgba(56, 189, 248, 0.4);
-  
+
   /* Typography Colors */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-muted: #64748b;
   --text-dim: #475569;
-  
+
   /* Domain Accents */
   --fintech: #f59e0b;
   --fintech-glow: rgba(245, 158, 11, 0.25);
@@ -36,24 +36,24 @@
   --cloud-glow: rgba(168, 85, 247, 0.25);
   --products: #10b981;
   --products-glow: rgba(16, 185, 129, 0.25);
-  
+
   /* Typography */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Mono', SFMono-Regular, Consolas, monospace;
-  
+
   /* Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Shadows & Glows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -61,7 +61,9 @@
 }
 
 /* Reset & Global */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -79,7 +81,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
     radial-gradient(circle at 100% 40%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 0% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
@@ -95,19 +97,27 @@ body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-space);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #233148;
   border-radius: var(--radius-full);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #38bdf8;
 }
 
 /* Typography Utilities */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
@@ -128,7 +138,8 @@ a:hover {
   color: #7dd3fc;
 }
 
-code, .mono {
+code,
+.mono {
   font-family: var(--font-mono);
   font-size: 0.88em;
 }
@@ -358,7 +369,8 @@ code, .mono {
   transition: all var(--transition-fast);
 }
 
-.dock-link:hover, .dock-link.active {
+.dock-link:hover,
+.dock-link.active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
 }
@@ -407,8 +419,17 @@ code, .mono {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
 }
 
 /* Button Component */
@@ -798,7 +819,7 @@ code, .mono {
   position: relative;
   min-height: 660px;
   background-color: #080c14;
-  background-image: 
+  background-image:
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 32px 32px;
   overflow: hidden;
@@ -952,6 +973,7 @@ code, .mono {
   --node-color: var(--fintech);
   --node-glow: var(--fintech-glow);
 }
+
 .domain-fintech .node-domain-badge {
   background: rgba(245, 158, 11, 0.15);
   color: #fbbf24;
@@ -962,6 +984,7 @@ code, .mono {
   --node-color: var(--healthcare);
   --node-glow: var(--healthcare-glow);
 }
+
 .domain-healthcare .node-domain-badge {
   background: rgba(236, 72, 153, 0.15);
   color: #f472b6;
@@ -972,6 +995,7 @@ code, .mono {
   --node-color: var(--enterprise);
   --node-glow: var(--enterprise-glow);
 }
+
 .domain-enterprise .node-domain-badge {
   background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
@@ -982,6 +1006,7 @@ code, .mono {
   --node-color: var(--cloud);
   --node-glow: var(--cloud-glow);
 }
+
 .domain-cloud .node-domain-badge {
   background: rgba(168, 85, 247, 0.15);
   color: #c084fc;
@@ -992,6 +1017,7 @@ code, .mono {
   --node-color: var(--products);
   --node-glow: var(--products-glow);
 }
+
 .domain-products .node-domain-badge {
   background: rgba(16, 185, 129, 0.15);
   color: #34d399;
@@ -1317,6 +1343,7 @@ code, .mono {
 .arch-spec-details summary {
   list-style: none;
 }
+
 .arch-spec-details summary::-webkit-details-marker {
   display: none;
 }
@@ -1609,7 +1636,7 @@ code, .mono {
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-xl);
   padding: 48px;
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -1793,16 +1820,20 @@ code, .mono {
   .header {
     height: 64px;
   }
+
   .header-inner {
     height: 64px;
   }
+
   .nav-dropdown-wrapper {
     display: none;
   }
+
   .header-actions .status-pill,
   .header-actions .btn {
     display: none;
   }
+
   .menu-toggle {
     display: flex;
     align-items: center;
@@ -1813,29 +1844,35 @@ code, .mono {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-subtle);
   }
+
   .brand-info {
     max-width: 170px;
   }
+
   .brand-name {
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .brand-title {
     font-size: 9px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .brand-badge {
     padding: 4px 7px;
     font-size: 11px;
   }
+
   .hero {
     padding-top: 96px;
     padding-bottom: 45px;
   }
+
   .hero-tag {
     font-size: 10px;
     padding: 5px 12px;
@@ -1846,38 +1883,46 @@ code, .mono {
     max-width: 100%;
     margin-bottom: 18px;
   }
+
   .hero-title {
     font-size: clamp(26px, 7.5vw, 36px);
     line-height: 1.2;
     margin-bottom: 16px;
     word-break: break-word;
   }
+
   .hero-subtitle {
     font-size: 15px;
     line-height: 1.55;
     margin-bottom: 26px;
   }
+
   .hero-actions {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 36px;
   }
+
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
   }
+
   .hero-metrics {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
   .timeline-nav-dock {
     display: none !important;
   }
+
   .mobile-nav {
     top: 64px;
     max-height: calc(100vh - 64px);
     overflow-y: auto;
   }
+
   .mobile-nav-actions {
     display: flex;
     flex-direction: column;
@@ -1886,9 +1931,11 @@ code, .mono {
     padding-top: 16px;
     border-top: 1px solid var(--border-subtle);
   }
+
   .contact-card {
     padding: 24px;
   }
+
   .drawer-content {
     padding: 20px;
   }
