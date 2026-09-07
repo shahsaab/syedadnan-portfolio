@@ -357,13 +357,46 @@ function renderSystemsGrid(filterDomain = "all", searchQuery = "") {
   if (activeCountEl) activeCountEl.textContent = `${filtered.length} / ${SYSTEM_NODES.length} Subsystems`;
 }
 
-// Render Project Inventory Matrix
-function renderProjectMatrix(projects) {
+// Pagination state
+const MATRIX_PAGE_SIZE = 5;
+let currentMatrixPage = 1;
+let currentMatrixProjects = PROJECT_INVENTORY;
+
+// Render Project Inventory Matrix with 5-per-page Pagination
+function renderProjectMatrix(projects, page = 1) {
   const tbody = document.getElementById("matrix-tbody");
+  const paginationInfo = document.getElementById("pagination-info");
+  const paginationControls = document.getElementById("pagination-controls");
   if (!tbody) return;
+
+  currentMatrixProjects = projects;
+  const totalItems = projects.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / MATRIX_PAGE_SIZE));
+
+  // Clamp page
+  currentMatrixPage = Math.min(Math.max(1, page), totalPages);
+
   tbody.innerHTML = "";
 
-  projects.forEach(p => {
+  if (totalItems === 0) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td colspan="6" style="text-align: center; padding: 36px 20px; color: var(--text-muted); font-family: var(--font-mono); font-size: 13px;">
+        No production systems found matching your search filter.
+      </td>
+    `;
+    tbody.appendChild(tr);
+
+    if (paginationInfo) paginationInfo.textContent = "Showing 0 of 0 systems";
+    if (paginationControls) paginationControls.innerHTML = "";
+    return;
+  }
+
+  const startIdx = (currentMatrixPage - 1) * MATRIX_PAGE_SIZE;
+  const endIdx = Math.min(startIdx + MATRIX_PAGE_SIZE, totalItems);
+  const pageItems = projects.slice(startIdx, endIdx);
+
+  pageItems.forEach(p => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td class="mono" style="color: var(--enterprise); font-weight: 700;">${p.id}</td>
@@ -378,6 +411,53 @@ function renderProjectMatrix(projects) {
     `;
     tbody.appendChild(tr);
   });
+
+  // Update pagination summary
+  if (paginationInfo) {
+    paginationInfo.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalItems} systems`;
+  }
+
+  // Render pagination buttons
+  if (paginationControls) {
+    paginationControls.innerHTML = "";
+
+    if (totalPages <= 1) return;
+
+    // Previous Button
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "pagination-btn";
+    prevBtn.innerHTML = "← Prev";
+    prevBtn.disabled = currentMatrixPage === 1;
+    prevBtn.addEventListener("click", () => {
+      if (currentMatrixPage > 1) {
+        renderProjectMatrix(currentMatrixProjects, currentMatrixPage - 1);
+      }
+    });
+    paginationControls.appendChild(prevBtn);
+
+    // Numbered Buttons
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement("button");
+      pageBtn.className = `pagination-btn ${i === currentMatrixPage ? "active" : ""}`;
+      pageBtn.textContent = i;
+      pageBtn.addEventListener("click", () => {
+        renderProjectMatrix(currentMatrixProjects, i);
+      });
+      paginationControls.appendChild(pageBtn);
+    }
+
+    // Next Button
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "pagination-btn";
+    nextBtn.innerHTML = "Next →";
+    nextBtn.disabled = currentMatrixPage === totalPages;
+    nextBtn.addEventListener("click", () => {
+      if (currentMatrixPage < totalPages) {
+        renderProjectMatrix(currentMatrixProjects, currentMatrixPage + 1);
+      }
+    });
+    paginationControls.appendChild(nextBtn);
+  }
 }
 
 // Filter Systems Map Nodes
@@ -417,7 +497,7 @@ function initSearch() {
         p.stack.toLowerCase().includes(q) ||
         p.role.toLowerCase().includes(q)
       );
-      renderProjectMatrix(filtered);
+      renderProjectMatrix(filtered, 1);
     });
   }
 }
@@ -707,9 +787,15 @@ function initScrollSpy() {
     let current = "";
     const scrollPos = window.scrollY + 120;
 
-    // Show/hide floating timeline dock after passing hero
+    // Show/hide floating timeline dock:
+    // Appears after scrolling past the hero (scrollY > 350)
+    // Hides once user reaches the "Connect" (#contact) section at the bottom
     if (timelineDock) {
-      if (window.scrollY > 350) {
+      const contactSection = document.getElementById("contact");
+      const contactTop = contactSection ? contactSection.offsetTop : Infinity;
+      const reachedConnect = (window.scrollY + window.innerHeight >= contactTop + 100) || (window.scrollY >= contactTop - 100);
+
+      if (window.scrollY > 350 && !reachedConnect) {
         timelineDock.classList.add("visible");
       } else {
         timelineDock.classList.remove("visible");
