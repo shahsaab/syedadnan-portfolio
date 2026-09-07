@@ -77,7 +77,7 @@ const SYSTEM_NODES = [
     domain: "enterprise",
     domainLabel: "Enterprise FMCG",
     title: "Colgate-Palmolive PSP Visibility Platform",
-    client: "Colgate-Palmolive Pakistan",
+    client: "Colgate-Palmolive Pakistan (Delivered by Turf)",
     period: "2024 – Present",
     featured: true,
     summary: "Nationwide Permanent Sales Promotion (PSP) and merchandiser tracking platform with polygon geofencing, real-time telemetry, and Okta corporate SSO integration. Live since Nov 2024.",
@@ -143,14 +143,14 @@ const SYSTEM_NODES = [
     domainLabel: "SaaS Product",
     title: "RollUp — Modern Micro-SaaS",
     client: "Proprietary Product (US Market)",
-    period: "2024 – Present",
+    period: "2026 – Present",
     featured: false,
-    summary: "High-performance productivity and data aggregation micro-SaaS built for modern knowledge teams. Live in production tapping the US market.",
+    summary: "High-performance productivity and data aggregation micro-SaaS built for modern knowledge teams. Launched recently in 2026, tapping the US market.",
     tags: ["Next.js", "Edge Computing", "Supabase", "Stripe API", "Tailwind CSS"],
     metrics: {
       stat1: { val: "Live", lbl: "rollup.eraconnect.net" },
       stat2: { val: "<50ms", lbl: "Edge API Latency" },
-      stat3: { val: "Micro-SaaS", lbl: "US Market Focus" }
+      stat3: { val: "2026", lbl: "US Market Launch" }
     },
     diagram: `[ Web Client / Edge CDN ]
            │
@@ -168,30 +168,33 @@ const SYSTEM_NODES = [
     impact: `Successfully deployed live at rollup.eraconnect.net, actively acquiring users in the US market.`
   },
   {
-    id: "NODE_06_ORBIT",
-    domain: "fintech",
-    domainLabel: "Financial Rails",
-    title: "Orbit Financial Transaction Switch",
-    client: "TPS / Commercial Banks (1Link)",
-    period: "2013 – 2015",
+    id: "NODE_06_FCMS",
+    domain: "enterprise",
+    domainLabel: "Academic Systems",
+    title: "FCMS — Faculty & Course Management",
+    client: "Axis Solutions (for Aptech)",
+    period: "2014 – 2015",
     featured: false,
-    summary: "Mission-critical banking transaction middleware translating ISO 8583 financial messages across nationwide ATM, POS, and branch teller networks.",
-    tags: ["C++", ".NET", "ISO 8583 Protocol", "MSSQL", "Socket Programming"],
+    summary: "Academic operations and course allocation engine built for Aptech, managing faculty scheduling, workload balancing, and multi-batch student records.",
+    tags: ["C#", "WinForms", "MSSQL Server", "Stored Procedures", "Crystal Reports"],
     metrics: {
-      stat1: { val: "Sub-100ms", lbl: "Switch Latency" },
-      stat2: { val: "National", lbl: "1Link ATM Network" },
-      stat3: { val: "Zero Loss", lbl: "Message Integrity" }
+      stat1: { val: "Campus", lbl: "Academic Scale" },
+      stat2: { val: "Zero Clash", lbl: "Automated Scheduling" },
+      stat3: { val: "WinForms", lbl: "Desktop Engine" }
     },
-    diagram: `[ ATM / POS Terminals ] ──> [ ISO 8583 Parser ]
-                                  │
-                                  ▼
-                         [ Orbit Switch Core ]
-                                  │
-                                  ▼
-                   [ 1Link Interbank Network ]`,
-    problem: `Financial switches require strict sub-100ms turnaround with zero tolerance for dropped bytes or network desynchronization across thousands of simultaneous terminal requests.`,
-    decision: `Implemented low-latency socket listeners with high-performance buffer parsers for ISO 8583 message fields, atomic database commits, and deterministic failover queues.`,
-    impact: `Processed millions of monthly ATM and point-of-sale financial switch transactions across Pakistan's primary interbank backbone.`
+    diagram: `[ Academic Coordinator Terminals ]
+               │
+               ▼
+[ Faculty Scheduling & Workload Engine ]
+               │
+               ▼
+[ Batch Course Allocation Controller ]
+               │
+               ▼
+[ MSSQL Academic Database & Reports ]`,
+    problem: `Managing multi-batch class allocations, teacher schedules, room capacities, and course prerequisites manually resulted in frequent timetable clashes and administrative delays.`,
+    decision: `Engineered an automated conflict-detection and scheduling engine in C# WinForms with relational database constraints, parameterized stored procedures, and customized reporting.`,
+    impact: `Successfully automated end-to-end academic scheduling and faculty workload management across Aptech education centers, eliminating timetable clashes.`
   },
   {
     id: "NODE_07_SECYOUR",
@@ -253,8 +256,8 @@ const SYSTEM_NODES = [
 // Career Project Inventory (Full 21 Projects Matrix)
 const PROJECT_INVENTORY = [
   { id: "P21", name: "SecYour — Cyber Hygiene Platform", client: "Turf / Proprietary", year: "2025–Present", domain: "Cybersecurity / SaaS", role: "Founder & Architect", stack: "Cloud Native, Graph DB, Go" },
-  { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Turf / Proprietary (US Market)", year: "2024–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
-  { id: "P19", name: "Colgate-Palmolive PSP Platform", client: "Colgate-Palmolive Pakistan", year: "2024–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
+  { id: "P20", name: "RollUp — Micro-SaaS Product", client: "Turf / Proprietary (US Market)", year: "2026–Present", domain: "SaaS / Cloud", role: "Founder & Architect", stack: "Next.js, Supabase, Stripe" },
+  { id: "P19", name: "Colgate-Palmolive PSP Platform", client: "Colgate-Palmolive Pakistan (Turf)", year: "2024–Present", domain: "Enterprise / FMCG", role: "Lead Architect", stack: "ASP.NET, MSSQL, GPS, Okta" },
   { id: "P18", name: "ERA Connect & ERA Lite", client: "AKU Hospital, LattLiv, 70+ Businesses", year: "2018–Present", domain: "Healthcare / Distributed", role: "Co-Founder & Chief Architect", stack: ".NET, WinForms, WinUI3, MSSQL Sync" },
   { id: "P17", name: "AMAX Insurance Serverless Modernization", client: "AMAX Insurance (USA)", year: "2023–2024", domain: "Cloud & AI", role: "Solutions Architect", stack: "AWS Lambda, Rekognition, Textract" },
   { id: "P16", name: "Grid Safety DevOps & Cloud", client: "Grid Safety (Australia) / Virtuosoft", year: "2021–2023", domain: "DevOps / IoT", role: "Principal DevOps Engineer", stack: "AWS ECS, Docker, GitHub Actions" },
@@ -266,11 +269,11 @@ const PROJECT_INVENTORY = [
   { id: "P10", name: "Real-Time Gross Settlement (RTGS)", client: "Bank Alfalah / State Bank of Pakistan", year: "2015–2018", domain: "Banking / Fintech", role: "Software Engineer (.NET)", stack: "ASP.NET, MSSQL, SWIFT, Windows Services" },
   { id: "P09", name: "Pakistan Remittance Initiative (PRI)", client: "Bank Alfalah / SBP / Overseas Min.", year: "2017–2018", domain: "Banking / Remittance", role: "Software Engineer", stack: "ASP.NET, SWIFT MT102/103, MSSQL" },
   { id: "P08", name: "MCB Mobile Banking Gateway", client: "Muslim Commercial Bank (MCB)", year: "2016–2017", domain: "Banking", role: "Integration Engineer", stack: "ASP.NET, Web Services, Encryption" },
-  { id: "P07", name: "Orbit Financial Transaction Switch", client: "TPS / 1Link Interbank Network", year: "2013–2015", domain: "Financial Rails", role: "Software Engineer", stack: "C++, .NET, ISO 8583, Socket API" },
+  { id: "P07", name: "FCMS (Faculty & Course Management System)", client: "Aptech (via Axis Solutions)", year: "2014–2015", domain: "Academic / Desktop", role: "Software Engineer", stack: "C#, WinForms, MSSQL, Stored Procedures" },
   { id: "P06", name: "Allied Bank Document Archive Vault", client: "Allied Bank Limited", year: "2015", domain: "Banking / Compliance", role: "Engineer", stack: "ASP.NET, MSSQL, Secure Blob" },
-  { id: "P05", name: "FCMS Fleet & Fuel Management", client: "Logistics Fleet Operator", year: "2014–2015", domain: "Logistics", role: "Software Engineer", stack: "C#, WinForms, GPS Hardware SDK" },
+  { id: "P05", name: "Fleet & Fuel Management System", client: "Logistics Fleet Operator", year: "2014–2015", domain: "Logistics", role: "Software Engineer", stack: "C#, WinForms, GPS Hardware SDK" },
   { id: "P04", name: "RMS Retail Management Suite", client: "Retail Chain (UK)", year: "2013–2014", domain: "Retail Systems", role: "Junior Software Engineer", stack: ".NET, MSSQL, Crystal Reports" },
-  { id: "P03", name: "Branch Banking Terminal Client", client: "Commercial Bank", year: "2013", domain: "Banking", role: "Software Engineer", stack: "WinForms, MSSQL, Peripherals" },
+  { id: "P03", name: "Aptech Technical Training & Faculty", client: "Aptech Computer Education", year: "2013–2014", domain: "Education / Training", role: "Faculty & Technical Trainer", stack: "C#, OOP, SQL Server, Web Tech" },
   { id: "P02", name: "Inventory & Billing Windows System", client: "Distribution Client", year: "2012–2013", domain: "Desktop / ERP", role: "Software Developer", stack: "C#, WinForms, SQL Server" },
   { id: "P01", name: "School Management System", client: "Educational Institution", year: "2012", domain: "Education / Web", role: "Junior Developer", stack: "PHP, MySQL, HTML/CSS" }
 ];
