@@ -158,21 +158,24 @@
       top: 0;
       z-index: 999;
       background: var(--bg-toolbar);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
-      padding: 10px 20px;
+      height: 52px;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       font-family: var(--font-sans);
+      white-space: nowrap;
     }
 
     .toolbar-left {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
 
     .toolbar-link {
@@ -181,13 +184,15 @@
       gap: 6px;
       color: var(--text-main);
       text-decoration: none;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
       padding: 6px 12px;
       border-radius: 6px;
       background: var(--badge-bg);
       border: 1px solid var(--border-color);
       transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .toolbar-link:hover {
@@ -196,52 +201,179 @@
     }
 
     .toolbar-title {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       font-weight: 500;
     }
 
-    .toolbar-controls {
+    .toolbar-right {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
-    .control-group {
+    .toolbar-btn {
+      border: 1px solid var(--border-color);
+      background: var(--badge-bg);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
       display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      user-select: none;
+      font-family: var(--font-sans);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .toolbar-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .toolbar-btn.active {
+      background: var(--bg-surface);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .aa-badge {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .chevron-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+
+    .toolbar-btn.active .chevron-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Collapsible E-Reader Appearance Popover */
+    .reader-settings-panel {
+      position: fixed;
+      top: 58px;
+      right: 16px;
+      width: 310px;
+      max-width: calc(100vw - 32px);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      z-index: 1001;
+      font-family: var(--font-sans);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+    }
+
+    .reader-settings-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .settings-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .settings-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .settings-close-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      line-height: 1;
+      transition: color 0.15s ease;
+    }
+
+    .settings-close-btn:hover {
+      color: var(--text-main);
+    }
+
+    .settings-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .settings-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .segmented-control {
+      display: flex;
       align-items: center;
       background: var(--badge-bg);
       border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 2px;
+      border-radius: 8px;
+      padding: 3px;
+      gap: 3px;
     }
 
-    .control-btn {
+    .segmented-btn {
+      flex: 1;
       border: none;
       background: transparent;
       color: var(--text-secondary);
-      padding: 5px 9px;
+      padding: 7px 4px;
       font-size: 0.82rem;
       font-weight: 600;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
       transition: all 0.15s ease;
       user-select: none;
+      white-space: nowrap;
     }
 
-    .control-btn:hover {
+    .segmented-btn:hover {
       color: var(--text-main);
     }
 
-    .control-btn.active {
+    .segmented-btn.active {
       background: var(--bg-surface);
       color: var(--text-main);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
     }
 
     .theme-dot {
@@ -252,18 +384,43 @@
       border: 1px solid rgba(0, 0, 0, 0.25);
     }
 
-    .theme-dot.paper {
-      background: #ffffff;
+    .theme-dot.paper { background: #ffffff; }
+    .theme-dot.sepia { background: #f4ecd8; border-color: #8c7659; }
+    .theme-dot.night { background: #161b22; border-color: #555; }
+
+    .size-stepper {
+      display: flex;
+      align-items: center;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 3px;
     }
 
-    .theme-dot.sepia {
-      background: #f4ecd8;
-      border-color: #8c7659;
+    .stepper-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 6px 16px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
     }
 
-    .theme-dot.night {
-      background: #161b22;
-      border-color: #555;
+    .stepper-btn:hover {
+      background: var(--bg-surface);
+      color: var(--text-main);
+    }
+
+    .size-indicator {
+      flex: 1;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
     }
 
     /* E-Reader Layout Container */
@@ -406,13 +563,31 @@
     }
 
     /* Mobile Responsive Screen Adaptations */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 640px) {
       .reader-toolbar {
-        padding: 8px 12px;
+        padding: 0 12px;
       }
 
       .toolbar-title {
         display: none;
+      }
+
+      .toolbar-link {
+        padding: 6px 10px;
+        font-size: 0.82rem;
+      }
+
+      .toolbar-btn {
+        padding: 6px 10px;
+        font-size: 0.82rem;
+      }
+
+      .reader-settings-panel {
+        top: 56px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-width: none;
       }
 
       .reader-layout {
@@ -471,7 +646,8 @@
       }
 
       .reading-progress-bar,
-      .reader-toolbar {
+      .reader-toolbar,
+      .reader-settings-panel {
         display: none !important;
       }
 
@@ -578,45 +754,73 @@
   <!-- Reading Progress Bar -->
   <div class="reading-progress-bar" id="progress-bar"></div>
 
-  <!-- E-Reader Toolbar -->
+  <!-- Sticky Reader Header Toolbar -->
   <header class="reader-toolbar">
     <div class="toolbar-left">
       <a href="/" class="toolbar-link" title="Return to Portfolio">← Portfolio</a>
-      <span class="toolbar-title">Syed Adnan Ahmed · CV Dossier</span>
+      <span class="toolbar-title">Syed Adnan Ahmed · Executive CV</span>
     </div>
 
-    <div class="toolbar-controls">
-      <!-- Theme Switcher -->
-      <div class="control-group" title="Reading Theme">
-        <button class="control-btn active" data-set-theme="paper" aria-label="Paper Theme">
-          <span class="theme-dot paper"></span> Paper
-        </button>
-        <button class="control-btn" data-set-theme="sepia" aria-label="Sepia Theme">
-          <span class="theme-dot sepia"></span> Sepia
-        </button>
-        <button class="control-btn" data-set-theme="night" aria-label="Night Theme">
-          <span class="theme-dot night"></span> Night
-        </button>
-      </div>
+    <div class="toolbar-right">
+      <button class="toolbar-btn" id="btn-print" title="Print or Save as PDF">
+        <span class="btn-icon">🖨️</span>
+        <span class="btn-text">Print</span>
+      </button>
 
-      <!-- Font Switcher -->
-      <div class="control-group" title="Font Style">
-        <button class="control-btn active" data-set-font="montserrat" aria-label="Montserrat Font">Montserrat</button>
-        <button class="control-btn" data-set-font="sans" aria-label="Sans Font">Sans</button>
-      </div>
-
-      <!-- Font Size Adjuster -->
-      <div class="control-group" title="Font Sizing">
-        <button class="control-btn" id="btn-size-dec" aria-label="Decrease Font Size">A-</button>
-        <button class="control-btn" id="btn-size-inc" aria-label="Increase Font Size">A+</button>
-      </div>
-
-      <!-- Print / Download PDF -->
-      <button class="toolbar-link" id="btn-print" style="cursor: pointer;" title="Print or Save as PDF">
-        🖨️ Print / PDF
+      <button class="toolbar-btn btn-settings" id="btn-toggle-settings" aria-expanded="false" aria-controls="settings-panel" title="Customize reading appearance">
+        <span class="aa-badge">Aa</span>
+        <span class="btn-text">Reader</span>
+        <span class="chevron-arrow" id="settings-chevron">▾</span>
       </button>
     </div>
   </header>
+
+  <!-- Collapsible Reader Appearance Popover / Panel -->
+  <div class="reader-settings-panel" id="settings-panel" role="region" aria-label="Reading Controls">
+    <div class="settings-header">
+      <span class="settings-title">Reading Settings</span>
+      <button class="settings-close-btn" id="btn-close-settings" aria-label="Close Settings">✕</button>
+    </div>
+
+    <!-- Setting 1: Theme -->
+    <div class="settings-section">
+      <div class="settings-label">THEME</div>
+      <div class="segmented-control">
+        <button class="segmented-btn active" data-set-theme="paper" aria-label="Paper Theme">
+          <span class="theme-dot paper"></span> Paper
+        </button>
+        <button class="segmented-btn" data-set-theme="sepia" aria-label="Sepia Theme">
+          <span class="theme-dot sepia"></span> Sepia
+        </button>
+        <button class="segmented-btn" data-set-theme="night" aria-label="Night Theme">
+          <span class="theme-dot night"></span> Night
+        </button>
+      </div>
+    </div>
+
+    <!-- Setting 2: Font Family -->
+    <div class="settings-section">
+      <div class="settings-label">TYPEFACE</div>
+      <div class="segmented-control">
+        <button class="segmented-btn active" data-set-font="montserrat" aria-label="Montserrat Font">
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Montserrat</span>
+        </button>
+        <button class="segmented-btn" data-set-font="sans" aria-label="Sans Font">
+          <span style="font-family: 'Inter', sans-serif; font-weight: 500;">Sans</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Setting 3: Font Size Stepper -->
+    <div class="settings-section">
+      <div class="settings-label">TEXT SIZE</div>
+      <div class="size-stepper">
+        <button class="stepper-btn" id="btn-size-dec" aria-label="Decrease Font Size">A-</button>
+        <span class="size-indicator" id="size-indicator-text">Default (105%)</span>
+        <button class="stepper-btn" id="btn-size-inc" aria-label="Increase Font Size">A+</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Reflowable Reader Layout -->
   <main class="reader-layout">
@@ -842,9 +1046,20 @@
       const fontButtons = document.querySelectorAll('[data-set-font]');
       const btnSizeDec = document.getElementById('btn-size-dec');
       const btnSizeInc = document.getElementById('btn-size-inc');
+      const sizeIndicatorText = document.getElementById('size-indicator-text');
       const btnPrint = document.getElementById('btn-print');
 
+      const btnToggleSettings = document.getElementById('btn-toggle-settings');
+      const settingsPanel = document.getElementById('settings-panel');
+      const btnCloseSettings = document.getElementById('btn-close-settings');
+
       const SIZES = ['sm', 'md', 'lg', 'xl'];
+      const SIZE_LABELS = {
+        sm: 'Compact (94%)',
+        md: 'Default (105%)',
+        lg: 'Large (118%)',
+        xl: 'Extra Large (130%)'
+      };
 
       // Restore saved preferences
       const savedTheme = localStorage.getItem('epub_cv_theme') || 'paper';
@@ -875,6 +1090,9 @@
       function applySize(size) {
         root.setAttribute('data-size', size);
         localStorage.setItem('epub_cv_size', size);
+        if (sizeIndicatorText) {
+          sizeIndicatorText.textContent = SIZE_LABELS[size] || 'Default (105%)';
+        }
       }
 
       // Event Listeners: Themes
@@ -908,8 +1126,55 @@
         }
       });
 
+      // Settings Panel Open/Close Toggle
+      function openSettings() {
+        settingsPanel.classList.add('open');
+        btnToggleSettings.classList.add('active');
+        btnToggleSettings.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeSettings() {
+        settingsPanel.classList.remove('open');
+        btnToggleSettings.classList.remove('active');
+        btnToggleSettings.setAttribute('aria-expanded', 'false');
+      }
+
+      function toggleSettings() {
+        if (settingsPanel.classList.contains('open')) {
+          closeSettings();
+        } else {
+          openSettings();
+        }
+      }
+
+      btnToggleSettings.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleSettings();
+      });
+
+      btnCloseSettings.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeSettings();
+      });
+
+      // Close settings panel when clicking outside or pressing Escape
+      document.addEventListener('click', (e) => {
+        if (settingsPanel.classList.contains('open') &&
+            !settingsPanel.contains(e.target) &&
+            !btnToggleSettings.contains(e.target)) {
+          closeSettings();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && settingsPanel.classList.contains('open')) {
+          closeSettings();
+        }
+      });
+
       // Print
       btnPrint.addEventListener('click', () => {
+        closeSettings();
         window.print();
       });
 
