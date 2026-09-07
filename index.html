@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syed Adnan Ahmed — Principal Solutions Architect & Systems Engineer</title>
+  <meta name="description" content="Principal Solutions Architect with 13+ years building mission-critical systems for central banks, Fortune 500 enterprises, and high-reliability healthcare infrastructure." />
+  <meta name="keywords" content="Solutions Architect, Systems Engineer, RTGS, Distributed Systems, .NET, AWS Serverless, Banking Infrastructure, Healthcare Systems" />
+  
+  <!-- Modern Architectural Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <span class="brand-badge">[SAA]</span>
+        <div class="brand-info">
+          <span class="brand-name">Syed Adnan Ahmed</span>
+          <span class="brand-title">Principal Solutions Architect</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#systems-map" class="nav-link">Systems Map</a></li>
+          <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+          <li><a href="#products" class="nav-link">Products & SaaS</a></li>
+          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+          <li><a href="#career-matrix" class="nav-link">Project Matrix</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Open to Principal / Tech Lead Roles</span>
+        </div>
+        <a href="cv.html" target="_blank" class="btn btn-outline btn-sm">Executive CV ↗</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Connect</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="#systems-map" class="mobile-nav-link">Systems Map</a></li>
+      <li><a href="#case-studies" class="mobile-nav-link">Case Studies</a></li>
+      <li><a href="#products" class="mobile-nav-link">Products & SaaS</a></li>
+      <li><a href="#philosophy" class="mobile-nav-link">Philosophy</a></li>
+      <li><a href="#career-matrix" class="mobile-nav-link">Project Matrix</a></li>
+      <li><a href="cv.html" target="_blank" class="mobile-nav-link" style="color: var(--enterprise);">View Executive CV (HTML) ↗</a></li>
+      <li><a href="#contact" class="mobile-nav-link" style="color: var(--enterprise);">Contact / Hire</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tag">
+        <span class="hero-tag-indicator"></span>
+        <span>PRINCIPAL SOLUTIONS ARCHITECT · 13+ YEARS IN PRODUCTION</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="gradient-text">I architect systems that</span><br />
+        <span class="highlight-text">cannot afford to fail.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        From central bank real-time gross settlement (RTGS) moving billions in daily interbank transfers, to 24/7 hospital network pharmacies and event-driven AWS AI pipelines. 13 years making critical architectural decisions with zero safety net.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#systems-map" class="btn btn-primary btn-lg">⬡ Explore Systems Topology Map</a>
+        <a href="#case-studies" class="btn btn-secondary btn-lg">⚡ Deep-Dive Case Studies</a>
+        <a href="cv.html" target="_blank" class="btn btn-outline btn-lg">📄 View Executive CV</a>
+      </div>
+
+      <!-- Hero Key Metrics -->
+      <div class="hero-metrics">
+        <div class="metric-card" style="--metric-color: var(--fintech);">
+          <div class="metric-value">
+            <span>₨ Billions</span>
+            <span class="metric-sub">+</span>
+          </div>
+          <div class="metric-label">Central Bank Settlement</div>
+          <div class="metric-desc">Daily interbank transfers under State Bank of Pakistan RTGS mandate. First live bank in Pakistan.</div>
+        </div>
+
+        <div class="metric-card" style="--metric-color: var(--healthcare);">
+          <div class="metric-value">
+            <span>40</span>
+            <span class="metric-sub">+ Nodes</span>
+          </div>
+          <div class="metric-label">Hospital Network Infrastructure</div>
+          <div class="metric-desc">Aga Khan University Hospital (AKU) 24/7 pharmacy and campus business locations with zero cashier downtime.</div>
+        </div>
+
+        <div class="metric-card" style="--metric-color: var(--enterprise);">
+          <div class="metric-value">
+            <span>Fortune 500</span>
+          </div>
+          <div class="metric-label">Enterprise FMCG Partner</div>
+          <div class="metric-desc">6+ consecutive years architecting nationwide field visibility & Okta SSO for Colgate-Palmolive.</div>
+        </div>
+
+        <div class="metric-card" style="--metric-color: var(--products);">
+          <div class="metric-value">
+            <span>Zero</span>
+          </div>
+          <div class="metric-label">Silent Failures Tolerated</div>
+          <div class="metric-desc">Store-and-Forward (SAF) queues, distributed database synchronization, and custom production inspection utilities.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Systems Topology Map Section -->
+  <section class="section" id="systems-map">
+    <div class="container">
+      <div class="section-header with-actions">
+        <div>
+          <div class="section-eyebrow">Interactive Systems Graph</div>
+          <h2 class="section-title">The Architecture of a Career</h2>
+          <p class="section-desc">
+            An interactive blueprint of systems engineered across 13+ years. Click any subsystem node to inspect its architectural topology, fault-tolerance strategy, and production metrics.
+          </p>
+        </div>
+      </div>
+
+      <div class="systems-map-wrapper">
+        <!-- Map Controls -->
+        <div class="map-toolbar">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-domain="all">
+              <span>All Subsystems</span>
+            </button>
+            <button class="filter-btn" data-domain="fintech">
+              <span class="filter-dot" style="background: var(--fintech);"></span>
+              <span>Financial Rails</span>
+            </button>
+            <button class="filter-btn" data-domain="healthcare">
+              <span class="filter-dot" style="background: var(--healthcare);"></span>
+              <span>Healthcare & Distributed</span>
+            </button>
+            <button class="filter-btn" data-domain="enterprise">
+              <span class="filter-dot" style="background: var(--enterprise);"></span>
+              <span>Enterprise & FMCG</span>
+            </button>
+            <button class="filter-btn" data-domain="cloud">
+              <span class="filter-dot" style="background: var(--cloud);"></span>
+              <span>Cloud & AI</span>
+            </button>
+            <button class="filter-btn" data-domain="products">
+              <span class="filter-dot" style="background: var(--products);"></span>
+              <span>SaaS & Ventures</span>
+            </button>
+          </div>
+
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="node-search" class="search-input" placeholder="Filter nodes (e.g. RTGS, SBP, AKU, AWS)..." />
+          </div>
+        </div>
+
+        <!-- Canvas & Node Grid -->
+        <div class="map-canvas-container">
+          <canvas id="circuit-canvas" class="circuit-canvas"></canvas>
+          <div id="nodes-grid" class="nodes-grid">
+            <!-- Node cards rendered dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Map Status Bar -->
+        <div class="map-status-bar">
+          <div class="status-metric-group">
+            <span id="active-node-count">8 / 8 Subsystems</span>
+            <span>·</span>
+            <span>UPTIME: 13+ YRS</span>
+            <span>·</span>
+            <span style="color: #34d399;">STATUS: 100% OPERATIONAL</span>
+          </div>
+          <div>
+            <span>CLICK ANY NODE TO INSPECT ARCHITECTURAL SPEC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Case Studies Section -->
+  <section class="section" id="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Production Crucibles</div>
+        <h2 class="section-title">Featured Case Studies</h2>
+        <p class="section-desc">
+          Four distinct architectural challenges where downtime, compliance failure, or network latency were not options.
+        </p>
+      </div>
+
+      <div class="case-studies-container">
+
+        <!-- Case Study 1: RTGS -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <div class="case-study-meta">
+                <span class="case-study-pill" style="background: rgba(245, 158, 11, 0.15); color: var(--fintech); border: 1px solid rgba(245, 158, 11, 0.3);">
+                  FINANCIAL INFRASTRUCTURE · BANKING
+                </span>
+                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2015 – 2018</span>
+              </div>
+              <h3 class="case-study-title">RTGS & PRI — Real-Time Interbank Settlement Platform</h3>
+              <div class="case-study-role">
+                Bank Alfalah & State Bank of Pakistan · <strong>Software Engineer (.NET / Architecture)</strong>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_01_RTGS')">Inspect Blueprint →</button>
+          </div>
+
+          <div class="case-study-body">
+            <div>
+              <div class="case-section-heading"><span>⬡ The Context & Architecture</span></div>
+              <p style="margin-bottom: 16px;">
+                The State Bank of Pakistan issued a strict mandate: commercial banks had to implement a compliant Real-Time Gross Settlement (RTGS) system. Unlike batch processing, RTGS handles large-value interbank settlements in real-time, with immediate finality and zero undo.
+              </p>
+              
+              <div class="arch-diagram-box">Branch Staff  ──>  Branch Manager Approval
+                          │
+                          ▼
+            Treasury Back-Office (Dual Approval)
+                          │
+                          ▼
+             Background Processing Windows Service
+                          │
+             ┌────────────┴────────────┐
+             ▼                         ▼
+   SWIFT MT102/103 Creation    Store-and-Forward (SAF) Queue
+             │                         │
+             ▼                         ▼
+      SBP PRISM Server   ◄────── (Retry / No Silent Loss)
+             │
+             ▼
+   Account Settlement: Requestor ──> GL + Taxes + FED</div>
+
+              <p style="margin-top: 16px; font-size: 14px;">
+                Near go-live, the scope expanded to absorb the <strong>Pakistan Remittance Initiative (PRI)</strong> — turning the platform into a dual-purpose financial backbone routing inbound international remittances away from informal networks.
+              </p>
+            </div>
+
+            <div>
+              <div class="case-box crucible">
+                <div class="case-section-heading" style="color: #fbbf24;">
+                  <span>⚡ The ₨200 Million Pilot Incident</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  During pilot, an incorrect transaction exceeding <strong>₨200,000,000 (200 Million PKR)</strong> was routed. I had built custom real-time WinForms monitoring utilities alongside the core services to track live message flows. 
+                  Catching the anomaly before PRISM finality allowed me to immediately alert Treasury, who reversed it before settlement.
+                </p>
+              </div>
+
+              <div class="case-box impact">
+                <div class="case-section-heading" style="color: #34d399;">
+                  <span>✓ First to Go Live & Competitor Consultation</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  Bank Alfalah became the <strong>first commercial bank in Pakistan to go live</strong>, cleanly passing the stringent SBP regulatory compliance audit. 
+                  When another top-tier Pakistani bank struggled with their RTGS implementation, their technical leadership reached out to consult with me on solution architecture.
+                </p>
+              </div>
+
+              <div class="metrics-row">
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--fintech);">₨ Billions</div>
+                  <div class="metric-mini-lbl">Daily Value</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--fintech);">1st</div>
+                  <div class="metric-mini-lbl">In Pakistan</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--fintech);">100%</div>
+                  <div class="metric-mini-lbl">Audit Clean</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2: ERA / AKU -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <div class="case-study-meta">
+                <span class="case-study-pill" style="background: rgba(236, 72, 153, 0.15); color: var(--healthcare); border: 1px solid rgba(236, 72, 153, 0.3);">
+                  DISTRIBUTED SYSTEMS · HEALTHCARE & RETAIL
+                </span>
+                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2018 – Present</span>
+              </div>
+              <h3 class="case-study-title">ERA — The 7-Year Distributed Database & AKU Hospital Infrastructure</h3>
+              <div class="case-study-role">
+                Aga Khan University Hospital (AKU) & Turf · <strong>Co-Founder & Chief Solutions Architect</strong>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_02_ERA')">Inspect Blueprint →</button>
+          </div>
+
+          <div class="case-study-body">
+            <div>
+              <div class="case-section-heading"><span>⬡ Defeating "Lie-Fi" in the Real World</span></div>
+              <p style="margin-bottom: 16px;">
+                Launching ERA across retail chains revealed a harsh reality: rural network infrastructure suffered chronic drops and degraded connections ("Lie-Fi"). Browser service workers and LocalStorage buckled under complex inventory workloads. In hospital pharmacies operating 24/7, cashier downtime is a critical safety failure.
+              </p>
+
+              <div class="arch-diagram-box">[ Cloud Master (Azure) ]
+  └── Primary MSSQL Master Database
+             ▲
+             │ [ Bi-Directional Custom Windows Sync Service ]
+             │ (Stored Procedures, Journal Queue, Conflict Resolution)
+             ▼
+[ Edge Terminals: AKU Hospital Pharmacies & Clinics ]
+  ├── Local MSSQL Instance (Zero-Latency Local Transaction Commit)
+  └── WinUI3 / WinForms Terminal (100% Offline Capability)</div>
+
+              <p style="margin-top: 16px; font-size: 14px;">
+                I stopped fighting browser limits and deployed a local database topology: edge stations run a local MSSQL instance with stored procedure journal queues and background Windows synchronization daemons that reconcile with the cloud master without human intervention.
+              </p>
+            </div>
+
+            <div>
+              <div class="case-box crucible">
+                <div class="case-section-heading" style="color: #f472b6;">
+                  <span>👥 Mentorship & Delivering "ERA Lite"</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  When small retail operators needed lightweight cash-desk software, I architected "ERA Lite" in WinForms and mentored <strong>Syed Shahriyar Ali</strong>, an ambitious 10th-grade apprentice who delivered the core client code under my direction. The trainee shipped a commercial system that generated reliable revenue.
+                </p>
+              </div>
+
+              <div class="case-box impact">
+                <div class="case-section-heading" style="color: #34d399;">
+                  <span>✓ 40+ Aga Khan University Hospital Nodes</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  ERA evolved from retail roots into specialized enterprise healthcare infrastructure. Today, it powers <strong>40+ business locations across Aga Khan University Hospital</strong> — South Asia's premier JCI-accredited medical institution — operating continuously 24/7 with zero cash-desk paralysis during telecommunications blackouts.
+                </p>
+              </div>
+
+              <div class="metrics-row">
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--healthcare);">40+</div>
+                  <div class="metric-mini-lbl">AKU Locations</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--healthcare);">24/7/365</div>
+                  <div class="metric-mini-lbl">Zero Outages</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--healthcare);">7 Years</div>
+                  <div class="metric-mini-lbl">Evolution</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 3: Colgate-Palmolive -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <div class="case-study-meta">
+                <span class="case-study-pill" style="background: rgba(56, 189, 248, 0.15); color: var(--enterprise); border: 1px solid rgba(56, 189, 248, 0.3);">
+                  ENTERPRISE FMCG · SUPPLY CHAIN
+                </span>
+                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2020 – Present</span>
+              </div>
+              <h3 class="case-study-title">Colgate-Palmolive PSP — Nationwide Field Visibility & Okta SSO</h3>
+              <div class="case-study-role">
+                Colgate-Palmolive Pakistan · <strong>Principal Solutions Architect</strong>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_03_COLGATE')">Inspect Blueprint →</button>
+          </div>
+
+          <div class="case-study-body">
+            <div>
+              <div class="case-section-heading"><span>⬡ The Enterprise Challenge</span></div>
+              <p style="margin-bottom: 16px;">
+                Colgate-Palmolive runs nationwide Permanent Sales Promotions (PSP) across thousands of retail outlets. Field merchandising campaigns previously suffered from GPS spoofing, unverified physical store presence, manual reconciliation delays, and disconnected corporate identity management.
+              </p>
+
+              <div class="arch-diagram-box">[ Merchandiser Mobile App ] ──> [ Real-Time GPS Coordinates ]
+                                            │
+                                            ▼
+[ Store Polygon Geofence Engine ] ──> [ Fraud / Teleport Filter ]
+                                            │
+                                            ▼
+[ Enterprise ASP.NET Platform ] ◄─── [ Corporate Okta SSO ]
+                                            │
+                                            ▼
+[ Automated Campaign Allocation & Audit Analytics ]</div>
+            </div>
+
+            <div>
+              <div class="case-box impact">
+                <div class="case-section-heading" style="color: #34d399;">
+                  <span>✓ 6-Year Continuous Operational Trust</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  Built a unified platform pairing store-level polygon geofencing with corporate Okta SSO authentication. The system verifies physical promoter attendance, tracks promotional collateral stock in real time, and exports auditable compliance reports directly into Colgate's executive management workflows.
+                </p>
+              </div>
+
+              <div class="metrics-row">
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--enterprise);">Nationwide</div>
+                  <div class="metric-mini-lbl">FMCG Scale</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--enterprise);">Okta</div>
+                  <div class="metric-mini-lbl">Corporate SSO</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--enterprise);">6+ Yrs</div>
+                  <div class="metric-mini-lbl">Active Partnership</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 4: AMAX AI Modernization -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <div class="case-study-meta">
+                <span class="case-study-pill" style="background: rgba(168, 85, 247, 0.15); color: var(--cloud); border: 1px solid rgba(168, 85, 247, 0.3);">
+                  CLOUD SERVERLESS & AI PIPELINES
+                </span>
+                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2023 – 2024</span>
+              </div>
+              <h3 class="case-study-title">AMAX Modernization — Event-Driven Serverless AI Claims Engine</h3>
+              <div class="case-study-role">
+                AMAX Insurance (USA) · <strong>Solutions Architect</strong>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_04_AMAX')">Inspect Blueprint →</button>
+          </div>
+
+          <div class="case-study-body">
+            <div>
+              <div class="case-section-heading"><span>⬡ Intelligent Serverless Pipeline</span></div>
+              <p style="margin-bottom: 16px;">
+                US automotive insurance claims traditionally required manual inspection of accident photographs and multi-page police reports, causing severe triage latency and human data entry mistakes.
+              </p>
+
+              <div class="arch-diagram-box">[ Incident Photos & Police Reports ] ──> [ Amazon S3 Ingestion ]
+                                                     │
+                                                     ▼
+                                          [ AWS Lambda Orchestrator ]
+                           ┌─────────────────────────┴─────────────────────────┐
+                           ▼                                                   ▼
+                [ Amazon Rekognition ]                                [ Amazon Textract ]
+                (Vehicle Damage Vision)                             (Police Document OCR)
+                           └─────────────────────────┬─────────────────────────┘
+                                                     ▼
+                                      [ EventBridge Decision Rules ]
+                                                     │
+                                                     ▼
+                                    [ Fast-Track Settlement / Adjuster ]</div>
+            </div>
+
+            <div>
+              <div class="case-box impact">
+                <div class="case-section-heading" style="color: #c084fc;">
+                  <span>✓ Slashed Claim Triage From Days to Seconds</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6;">
+                  Architected an automated, serverless event-driven architecture using AWS Lambda, Amazon Rekognition, and Amazon Textract. Claims artifacts uploaded to Amazon S3 trigger automated triage models that detect damaged vehicle panels, extract police case metadata, and route verified claims into instant approval queues.
+                </p>
+              </div>
+
+              <div class="metrics-row">
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--cloud);">&lt;30s</div>
+                  <div class="metric-mini-lbl">Triage Time</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--cloud);">Serverless</div>
+                  <div class="metric-mini-lbl">Zero Infra Mgmt</div>
+                </div>
+                <div class="metric-mini">
+                  <div class="metric-mini-val" style="color: var(--cloud);">AWS</div>
+                  <div class="metric-mini-lbl">Computer Vision</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Products & Micro-SaaS Showcase Section -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header with-actions">
+        <div>
+          <div class="section-eyebrow">Proprietary Ventures</div>
+          <h2 class="section-title">Products & Micro-SaaS</h2>
+          <p class="section-desc">
+            Building proprietary software products designed for lean execution, high efficiency, and global reach.
+          </p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        
+        <!-- Product 1: RollUp -->
+        <div class="product-card live-product">
+          <div class="product-badge badge-live">
+            <span class="status-dot"></span>
+            <span>LIVE IN PRODUCTION</span>
+          </div>
+
+          <h3 class="product-title">RollUp</h3>
+          <div class="product-subtitle mono">rollup.eraconnect.net · Micro-SaaS</div>
+          
+          <p class="product-desc">
+            A high-velocity data consolidation and workflow aggregation micro-SaaS platform. Designed to eliminate fragmented spreadsheets and manual cross-tool data gathering for modern knowledge teams, tapping directly into the US micro-SaaS market.
+          </p>
+
+          <div style="margin-bottom: 24px;">
+            <div class="case-section-heading"><span>Stack Architecture</span></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Edge Computing</span>
+              <span class="tech-tag">Supabase PostgreSQL</span>
+              <span class="tech-tag">Stripe Billing</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div style="margin-top: auto; display: flex; gap: 12px; align-items: center;">
+            <a href="https://rollup.eraconnect.net" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              Visit Live App ↗
+            </a>
+            <button class="btn btn-outline btn-sm" onclick="openInspectionDrawer('NODE_05_ROLLUP')">
+              View Architecture
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2: SecYour -->
+        <div class="product-card stealth-product">
+          <div class="product-badge badge-stealth">
+            <span>STEALTH · COMING SOON</span>
+          </div>
+
+          <h3 class="product-title">SecYour</h3>
+          <div class="product-subtitle mono">Cyber Hygiene & Attack Surface Telemetry</div>
+
+          <p class="product-desc">
+            Automated external security posture scoring and continuous cyber hygiene telemetry. Built to empower SMBs and enterprise vendor networks with agentless, friction-free vulnerability visibility mapped against standard security baselines.
+          </p>
+
+          <div style="margin-bottom: 24px;">
+            <div class="case-section-heading"><span>Stack Architecture</span></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tech-tag">Cloud-Native</span>
+              <span class="tech-tag">Agentless Scanner</span>
+              <span class="tech-tag">Graph Vulnerability DB</span>
+              <span class="tech-tag">Continuous Telemetry</span>
+            </div>
+          </div>
+
+          <div style="margin-top: auto; display: flex; gap: 12px; align-items: center;">
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_07_SECYOUR')">
+              Inspect Founding Spec
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Philosophy & Reframe Section -->
+  <section class="section" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Engineering Reframe</div>
+        <h2 class="section-title">How 13 Years Without a Safety Net Shapes System Design</h2>
+        <p class="section-desc">
+          When you don't answer to middle management and instead answer directly to central banks, hospital directors, and Fortune 500 executives, your definition of good software changes.
+        </p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="philosophy-num">// 01</div>
+          <h3 class="philosophy-title">Production is the Only Test</h3>
+          <p class="philosophy-text">
+            No certification or classroom credential replaces the experience of routing billions in daily settlement or keeping hospital pharmacies running through regional internet blackouts. Every architectural principle I hold was stress-tested in production.
+          </p>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-num">// 02</div>
+          <h3 class="philosophy-title">Never Tolerate Silent Failures</h3>
+          <p class="philosophy-text">
+            Silent drops are the fatal flaw of distributed systems. Whether it is Store-and-Forward queues for SWIFT messages or bi-directional SQL sync daemons, failures must be observable, retryable, and surfaced immediately.
+          </p>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-num">// 03</div>
+          <h3 class="philosophy-title">Design for Unstable Realities</h3>
+          <p class="philosophy-text">
+            Silicon Valley dogma assumes 5G connectivity and unlimited bandwidth. Real-world engineering requires assuming connections will degrade into "Lie-Fi". Resilient edge caching and local autonomous commits protect users when external infrastructure collapses.
+          </p>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-num">// 04</div>
+          <h3 class="philosophy-title">No Black Boxes in Compliance</h3>
+          <p class="philosophy-text">
+            When central bank auditors and healthcare compliance officers review your architecture, opaque dependencies and bloated libraries become liabilities. Understanding every layer of code you ship guarantees transparency and audit defense.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Career Project Matrix (Searchable & Filterable) -->
+  <section class="section" id="career-matrix">
+    <div class="container">
+      <div class="section-header with-actions">
+        <div>
+          <div class="section-eyebrow">Complete Dossier</div>
+          <h2 class="section-title">Career Project Matrix</h2>
+          <p class="section-desc">
+            A comprehensive inventory of 21 systems engineered from 2012 to 2026 across banking, healthcare, retail, cloud AI, and logistics.
+          </p>
+        </div>
+      </div>
+
+      <div class="matrix-container">
+        <div class="matrix-toolbar">
+          <div class="mono" style="font-size: 13px; color: var(--text-secondary);">
+            Showing all documented production systems (2012 – 2026)
+          </div>
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="matrix-search" class="search-input" placeholder="Search projects, clients, or technologies..." />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>System & Client</th>
+                <th>Timeline</th>
+                <th>Domain</th>
+                <th>Architectural Role</th>
+                <th>Primary Tech Stack</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-tbody">
+              <!-- Rendered dynamically by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Executive Engagement Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <span class="status-dot"></span>
+          <span class="mono" style="font-size: 12px; color: #34d399; font-weight: 700; letter-spacing: 1px;">
+            ACCEPTING NEW OPPORTUNITIES
+          </span>
+        </div>
+
+        <h2 style="font-size: clamp(30px, 4vw, 44px); margin-bottom: 16px;">
+          Let's build systems that last.
+        </h2>
+
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 700px; line-height: 1.6;">
+          I am currently open to senior technical leadership roles (<strong>Principal Solutions Architect, Chief Architect, VP of Engineering</strong>) and high-impact advisory or consulting engagements.
+        </p>
+
+        <div class="contact-grid">
+          <!-- Email -->
+          <div class="contact-channel" data-copy="syed.adnanahmed@live.com">
+            <div class="channel-icon">✉</div>
+            <div>
+              <div class="channel-label">Email (Click to Copy)</div>
+              <div class="channel-val">syed.adnanahmed@live.com</div>
+            </div>
+          </div>
+
+          <!-- Phone / WhatsApp -->
+          <div class="contact-channel" data-copy="+92 333 0297023">
+            <div class="channel-icon">📱</div>
+            <div>
+              <div class="channel-label">Direct / WhatsApp (Click to Copy)</div>
+              <div class="channel-val">+92 333 0297023</div>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/sadnanahmed01/" target="_blank" rel="noopener" class="contact-channel">
+            <div class="channel-icon">in</div>
+            <div>
+              <div class="channel-label">LinkedIn Profile</div>
+              <div class="channel-val">sadnanahmed01 ↗</div>
+            </div>
+          </a>
+
+          <!-- CV Document -->
+          <a href="cv.html" target="_blank" class="contact-channel" style="border-color: var(--enterprise);">
+            <div class="channel-icon">📄</div>
+            <div>
+              <div class="channel-label">Executive CV</div>
+              <div class="channel-val" style="color: var(--enterprise);">View Full CV (HTML) ↗</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Inspection Drawer Modal -->
+  <div class="modal-backdrop" id="inspection-modal" role="dialog" aria-modal="true">
+    <div class="inspection-drawer">
+      <div class="drawer-header">
+        <span class="mono" style="font-size: 13px; color: var(--enterprise); font-weight: 700;">// ARCHITECTURAL SPECIFICATION</span>
+        <button class="drawer-close" id="drawer-close-btn" aria-label="Close drawer">✕</button>
+      </div>
+      <div class="drawer-content" id="drawer-body-content">
+        <!-- Injected dynamically on node click -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span style="font-weight: 600; color: var(--text-primary);">Syed Adnan Ahmed</span>
+        <span style="margin: 0 8px;">·</span>
+        <span>Principal Solutions Architect & Systems Engineer</span>
+      </div>
+      <div class="mono" style="font-size: 12px;">
+        Designed as a living architecture blueprint. Built with clean HTML, CSS & JS.
+      </div>
+      <div>
+        <a href="#systems-map" style="color: var(--text-muted); margin-right: 16px;">Top ↑</a>
+        <a href="cv.html" target="_blank" style="color: var(--enterprise);">Executive CV ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
