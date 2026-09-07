@@ -1,120 +1,573 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="paper" data-font="montserrat" data-size="md">
 
 <head>
   <meta charset="UTF-8">
-  <title>Syed Adnan Ahmed - CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Adnan Ahmed - Resume</title>
+  <meta name="description"
+    content="Resume of Syed Adnan Ahmed - Principal Solutions Architect & Systems Engineer with 13+ years of experience.">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Modern Reader Typography (Montserrat + Clean Sans Inter + Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, Calibri, sans-serif;
-      font-size: 10pt;
-      color: #111111;
-      margin: 1.5cm 2cm;
-      line-height: 1.38;
+    /* -------------------------------------------------------------
+       E-READER / EPUB DESIGN SYSTEM & THEMES
+       ------------------------------------------------------------- */
+    :root {
+      --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+
+      --text-scale: 1.04rem;
+      --line-height: 1.72;
+      --measure: 740px;
     }
 
+    /* THEME 1: Paper (Natural Soft White Book Page) */
+    html[data-theme="paper"] {
+      --bg-page: #f8f6f0;
+      --bg-surface: #ffffff;
+      --bg-toolbar: rgba(248, 246, 240, 0.94);
+      --border-color: #e5dfd5;
+      --text-main: #1f2328;
+      --text-secondary: #57606a;
+      --text-muted: #6e7781;
+      --link-color: #0969da;
+      --accent: #2563eb;
+      --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      --badge-bg: #eef2f6;
+      --hr-color: #222222;
+    }
+
+    /* THEME 2: Sepia (Authentic Warm Parchment / E-Reader) */
+    html[data-theme="sepia"] {
+      --bg-page: #f4ecd8;
+      --bg-surface: #faeed9;
+      --bg-toolbar: rgba(244, 236, 216, 0.95);
+      --border-color: #dfd3ba;
+      --text-main: #3d3226;
+      --text-secondary: #635341;
+      --text-muted: #7d6b56;
+      --link-color: #8b4513;
+      --accent: #875122;
+      --card-shadow: 0 4px 24px rgba(78, 57, 32, 0.08);
+      --badge-bg: #e8dcbf;
+      --hr-color: #5c4735;
+    }
+
+    /* THEME 3: Night (OLED Charcoal / Deep Slate) */
+    html[data-theme="night"] {
+      --bg-page: #0d1117;
+      --bg-surface: #161b22;
+      --bg-toolbar: rgba(13, 17, 23, 0.94);
+      --border-color: #30363d;
+      --text-main: #e6edf3;
+      --text-secondary: #9198a1;
+      --text-muted: #7d8590;
+      --link-color: #58a6ff;
+      --accent: #38bdf8;
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      --badge-bg: #21262d;
+      --hr-color: #484f58;
+    }
+
+    /* Font Families */
+    html[data-font="montserrat"] body {
+      font-family: var(--font-montserrat);
+      letter-spacing: -0.012em;
+    }
+
+    html[data-font="sans"] body {
+      font-family: var(--font-sans);
+      letter-spacing: -0.01em;
+    }
+
+    /* Reflowable Text Sizing */
+    html[data-size="sm"] {
+      --text-scale: 0.94rem;
+      --line-height: 1.65;
+    }
+
+    html[data-size="md"] {
+      --text-scale: 1.05rem;
+      --line-height: 1.74;
+    }
+
+    html[data-size="lg"] {
+      --text-scale: 1.18rem;
+      --line-height: 1.8;
+    }
+
+    html[data-size="xl"] {
+      --text-scale: 1.3rem;
+      --line-height: 1.86;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-size: var(--text-scale);
+      line-height: var(--line-height);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      word-break: break-word;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Top Reading Progress Bar */
+    .reading-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 1000;
+      transition: width 0.08s ease-out;
+    }
+
+    /* Sticky Reader Header Toolbar */
+    .reader-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--bg-toolbar);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: var(--font-sans);
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toolbar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .toolbar-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .toolbar-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .control-group {
+      display: inline-flex;
+      align-items: center;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .control-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 5px 9px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .control-btn:hover {
+      color: var(--text-main);
+    }
+
+    .control-btn.active {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .theme-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .theme-dot.paper {
+      background: #ffffff;
+    }
+
+    .theme-dot.sepia {
+      background: #f4ecd8;
+      border-color: #8c7659;
+    }
+
+    .theme-dot.night {
+      background: #161b22;
+      border-color: #555;
+    }
+
+    /* E-Reader Layout Container */
+    .reader-layout {
+      min-height: calc(100vh - 56px);
+      padding: 40px 20px 90px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reader-page {
+      width: 100%;
+      max-width: var(--measure);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 64px 54px;
+      box-shadow: var(--card-shadow);
+      transition: all 0.25s ease;
+    }
+
+    /* Content Typography */
     h1 {
-      font-size: 20pt;
-      font-weight: bold;
-      color: #111111;
-      margin: 0 0 3px 0;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 11pt;
-      font-weight: bold;
-      color: #333333;
-      margin: 0 0 5px 0;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 12px;
+      line-height: 1.35;
     }
 
     .contact {
-      font-size: 9.5pt;
-      color: #444444;
-      margin: 0 0 12px 0;
-      line-height: 1.5;
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+      line-height: 1.65;
     }
 
     .contact a {
-      color: #111111;
+      color: var(--link-color);
       text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
     }
 
     hr {
       border: none;
-      border-top: 1.5px solid #222222;
-      margin: 4px 0 12px 0;
+      border-top: 1.5px solid var(--hr-color);
+      margin: 14px 0 28px 0;
+      opacity: 0.85;
     }
 
     h2 {
-      font-size: 10.5pt;
-      font-weight: bold;
+      font-size: 1.15rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #111111;
-      margin: 14px 0 6px 0;
-      border-bottom: 1px solid #cccccc;
-      padding-bottom: 2px;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      margin: 36px 0 14px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .job-header {
-      margin: 10px 0 2px 0;
-    }
-
-    .job-title {
-      font-size: 10.5pt;
-      font-weight: bold;
-      color: #111111;
-    }
-
-    .job-meta {
-      font-size: 9.2pt;
-      color: #555555;
+      margin-top: 26px;
       margin-bottom: 4px;
     }
 
-    .company-desc {
-      font-size: 9.5pt;
-      color: #333333;
-      margin-bottom: 6px;
+    .job-title {
+      font-size: 1.14rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .job-meta {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
       font-style: italic;
     }
 
+    .company-desc {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
     .project-heading {
-      font-size: 10pt;
-      font-weight: bold;
-      color: #222222;
-      margin: 8px 0 2px 0;
-    }
-
-    ul {
-      margin: 3px 0 8px 0;
-      padding-left: 18px;
-    }
-
-    ul li {
-      margin-bottom: 3px;
-      font-size: 9.8pt;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 20px 0 6px 0;
+      line-height: 1.4;
     }
 
     p {
-      margin: 3px 0;
+      margin-bottom: 12px;
+      text-wrap: pretty;
+    }
+
+    ul {
+      margin: 8px 0 20px 0;
+      padding-left: 24px;
+    }
+
+    ul li {
+      margin-bottom: 9px;
+      padding-left: 3px;
+      text-wrap: pretty;
+    }
+
+    ul li::marker {
+      color: var(--accent);
     }
 
     .skills-list {
-      margin: 4px 0;
-      font-size: 9.8pt;
-      line-height: 1.5;
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+      line-height: 1.7;
     }
 
     .skills-list strong {
-      color: #111111;
+      color: var(--text-main);
+      font-weight: 700;
     }
 
+    /* Mobile Responsive Screen Adaptations */
+    @media screen and (max-width: 768px) {
+      .reader-toolbar {
+        padding: 8px 12px;
+      }
+
+      .toolbar-title {
+        display: none;
+      }
+
+      .reader-layout {
+        padding: 12px 10px 60px;
+      }
+
+      .reader-page {
+        border-radius: 8px;
+        padding: 24px 18px;
+        border: none;
+        box-shadow: none;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .subtitle {
+        font-size: 1.04rem;
+      }
+
+      .contact {
+        font-size: 0.88rem;
+      }
+
+      h2 {
+        font-size: 1.05rem;
+        margin-top: 28px;
+      }
+
+      .job-title {
+        font-size: 1.06rem;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       PRINT & ATS COMPLIANCE PRESERVATION
+       ------------------------------------------------------------- */
     @media print {
+      @page {
+        margin: 1.2cm 1.5cm;
+        size: A4 portrait;
+      }
+
+      html,
       body {
-        margin: 1cm 1.5cm;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: Arial, Calibri, sans-serif !important;
+        font-size: 9.8pt !important;
+        line-height: 1.36 !important;
+      }
+
+      .reading-progress-bar,
+      .reader-toolbar {
+        display: none !important;
+      }
+
+      .reader-layout {
+        padding: 0 !important;
+        display: block !important;
+      }
+
+      .reader-page {
+        max-width: 100% !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      h1 {
+        font-size: 19pt !important;
+        color: #000000 !important;
+        margin: 0 0 2px 0 !important;
+      }
+
+      .subtitle {
+        font-size: 11pt !important;
+        color: #333333 !important;
+        margin: 0 0 4px 0 !important;
+      }
+
+      .contact {
+        font-size: 9.2pt !important;
+        color: #444444 !important;
+        margin: 0 0 10px 0 !important;
+      }
+
+      .contact a {
+        color: #111111 !important;
+        text-decoration: none !important;
+      }
+
+      hr {
+        border-top: 1.5px solid #000000 !important;
+        margin: 4px 0 10px 0 !important;
+      }
+
+      h2 {
+        font-size: 10.5pt !important;
+        color: #000000 !important;
+        margin: 12px 0 4px 0 !important;
+        border-bottom: 1px solid #cccccc !important;
+        page-break-after: avoid;
+      }
+
+      .job-header {
+        margin-top: 10px !important;
+        page-break-after: avoid;
+      }
+
+      .job-title {
+        font-size: 10.2pt !important;
+        color: #000000 !important;
+      }
+
+      .job-meta {
+        font-size: 9pt !important;
+        color: #555555 !important;
+        margin-bottom: 3px !important;
+      }
+
+      .company-desc {
+        font-size: 9.2pt !important;
+        color: #444444 !important;
+        margin-bottom: 4px !important;
+      }
+
+      .project-heading {
+        font-size: 9.8pt !important;
+        color: #111111 !important;
+        margin: 6px 0 2px 0 !important;
+        page-break-after: avoid;
+      }
+
+      ul {
+        margin: 2px 0 6px 0 !important;
+        padding-left: 18px !important;
+      }
+
+      ul li {
+        font-size: 9.5pt !important;
+        margin-bottom: 2.5px !important;
+        page-break-inside: avoid;
+      }
+
+      .skills-list {
+        font-size: 9.5pt !important;
+        margin: 3px 0 !important;
+        line-height: 1.4 !important;
       }
     }
   </style>
@@ -122,184 +575,354 @@
 
 <body>
 
-  <h1>SYED ADNAN AHMED</h1>
-  <p class="subtitle">Principal Solutions Architect &amp; Systems Engineer</p>
-  <p class="contact">
-    Karachi, Pakistan | +92 333 0297023 |
-    <a href="mailto:syed.adnanahmed@live.com">syed.adnanahmed@live.com</a> |
-    <a href="https://linkedin.com/in/sadnanahmed01">linkedin.com/in/sadnanahmed01</a> |
-    <a href="https://syedadnan.dev">https://syedadnan.dev</a>
-  </p>
-  <hr>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="progress-bar"></div>
 
-  <h2>Professional Summary</h2>
-  <p>
-    Principal Solutions Architect and Systems Engineer with 13+ years of experience designing and operating
-    high-reliability systems across financial services, healthcare networks, FMCG distribution, and cloud
-    infrastructure. Core expertise in distributed database synchronization, offline-first architectures, enterprise
-    identity (Okta SSO), serverless cloud pipelines (AWS), and high-throughput financial transactions (RTGS under State
-    Bank of Pakistan mandate). Proven track record leading technical architectures that eliminate single points of
-    failure across enterprise and multi-tenant environments.
-  </p>
+  <!-- E-Reader Toolbar -->
+  <header class="reader-toolbar">
+    <div class="toolbar-left">
+      <a href="/" class="toolbar-link" title="Return to Portfolio">← Portfolio</a>
+      <span class="toolbar-title">Syed Adnan Ahmed · CV Dossier</span>
+    </div>
 
-  <h2>Technical Skills</h2>
-  <div class="skills-list"><strong>Languages &amp; Frameworks:</strong> C#, .NET Core, ASP.NET, WinForms, WinUI3, Web
-    APIs, Next.js, Node.js, TypeScript, JavaScript, SQL, Python</div>
-  <div class="skills-list"><strong>Cloud &amp; Serverless:</strong> AWS (Lambda, Rekognition, Textract, EventBridge, S3,
-    DynamoDB, ECS), Azure (Functions, Azure SQL, Azure DevOps)</div>
-  <div class="skills-list"><strong>Databases:</strong> Microsoft SQL Server (Distributed Sync, Stored Procedures,
-    Triggers), PostgreSQL, Supabase, Redis</div>
-  <div class="skills-list"><strong>Enterprise &amp; Identity:</strong> Okta SSO, OAuth 2.0, OpenID Connect, RBAC, Active
-    Directory, SAP RFC, PeopleSoft HRMS</div>
-  <div class="skills-list"><strong>Financial &amp; Integrations:</strong> SWIFT (MT102, MT103), SBP PRISM, Payment
-    Gateways (Mastercard), FBR Fiscal APIs, REST, SOAP</div>
-  <div class="skills-list"><strong>DevOps &amp; Infrastructure:</strong> Docker, Kubernetes, GitHub Actions, CI/CD
-    Pipelines, Distributed Systems, Edge Computing</div>
+    <div class="toolbar-controls">
+      <!-- Theme Switcher -->
+      <div class="control-group" title="Reading Theme">
+        <button class="control-btn active" data-set-theme="paper" aria-label="Paper Theme">
+          <span class="theme-dot paper"></span> Paper
+        </button>
+        <button class="control-btn" data-set-theme="sepia" aria-label="Sepia Theme">
+          <span class="theme-dot sepia"></span> Sepia
+        </button>
+        <button class="control-btn" data-set-theme="night" aria-label="Night Theme">
+          <span class="theme-dot night"></span> Night
+        </button>
+      </div>
 
-  <h2>Professional Experience</h2>
+      <!-- Font Switcher -->
+      <div class="control-group" title="Font Style">
+        <button class="control-btn active" data-set-font="montserrat" aria-label="Montserrat Font">Montserrat</button>
+        <button class="control-btn" data-set-font="sans" aria-label="Sans Font">Sans</button>
+      </div>
 
-  <div class="job-header">
-    <span class="job-title">Turf | Founder &amp; Chief Solutions Architect</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | Feb 2019 - Present</div>
-  <p class="company-desc">Technology studio and engineering consultancy delivering systems for enterprise clients,
-    hospital networks, and retail brands.</p>
+      <!-- Font Size Adjuster -->
+      <div class="control-group" title="Font Sizing">
+        <button class="control-btn" id="btn-size-dec" aria-label="Decrease Font Size">A-</button>
+        <button class="control-btn" id="btn-size-inc" aria-label="Increase Font Size">A+</button>
+      </div>
 
-  <p class="project-heading">Colgate-Palmolive Pakistan - Nationwide PSP Platform (2024 - Present)</p>
-  <div class="job-meta">Scoping Nov 2023 | Production Go-Live Nov 2024 | Active Ongoing Upgrades</div>
-  <ul>
-    <li>Architected the nationwide Permanent Sales Promotion (PSP) management platform for Colgate-Palmolive Pakistan,
-      covering field operations and merchandising audit workflows across thousands of retail outlets nationwide.</li>
-    <li>Implemented real-time mobile GPS validation with polygon geofencing to mathematically verify physical promoter
-      presence at designated stores, preventing location spoofing and unverified audits.</li>
-    <li>Integrated corporate Okta SSO for centralized corporate identity federation, multi-tier authorization, and
-      role-based access control.</li>
-    <li>Built automated inventory allocation tracking and audit reconciliation reports for sales leadership.</li>
-  </ul>
+      <!-- Print / Download PDF -->
+      <button class="toolbar-link" id="btn-print" style="cursor: pointer;" title="Print or Save as PDF">
+        🖨️ Print / PDF
+      </button>
+    </div>
+  </header>
 
-  <p class="project-heading">Aga Khan University Hospital - ERA Healthcare &amp; Commerce Platform (2019 - Present)</p>
-  <ul>
-    <li>Deployed and scaled ERA across 40+ business units at Aga Khan University Hospital, including 24/7 hospital
-      pharmacies, dining facilities, and campus operations, with peak reach across 70+ retail businesses nationwide.
-    </li>
-    <li>Designed a distributed database synchronization engine using local MSSQL instances, stored procedure journal
-      queues, and background Windows sync services to maintain 100% offline terminal operation during external internet
-      outages.</li>
-    <li>Maintained continuous 24/7/365 uptime for mission-critical hospital pharmacies without cash-desk stoppage.</li>
-    <li>Designed lightweight WinForms client (ERA Lite) for lower-spec retail terminals, mentoring a junior developer
-      who delivered the core client code during training.</li>
-    <li>Built a 30-second automated multi-tenant provisioning engine (database setup, instance configuration, custom
-      branding) during 2020 retail lockdowns, later migrating the front-end to a headless Netlify architecture.</li>
-    <li>Integrated PeopleSoft HRMS, SAP modules (Sales, Inventory, Warehouse), and FBR fiscal compliance APIs.</li>
-  </ul>
+  <!-- Reflowable Reader Layout -->
+  <main class="reader-layout">
+    <article class="reader-page">
 
-  <div class="job-header">
-    <span class="job-title">RollUp | Founder &amp; Architect</span>
-  </div>
-  <div class="job-meta">Personal Project (rollup.eraconnect.net) | 2026 - Present</div>
-  <ul>
-    <li>Architected and launched RollUp in 2026, a micro-SaaS data aggregation and workflow productivity platform built
-      for knowledge workers, targeting the US market.</li>
-    <li>Built with Next.js, Edge runtime, Supabase (PostgreSQL), Stripe billing integration, and Tailwind CSS.</li>
-  </ul>
+      <h1>SYED ADNAN AHMED</h1>
+      <p class="subtitle">Principal Solutions Architect &amp; Systems Engineer</p>
+      <p class="contact">
+        Karachi, Pakistan | +92 333 0297023 |
+        <a href="mailto:syed.adnanahmed@live.com">syed.adnanahmed@live.com</a> |
+        <a href="https://linkedin.com/in/sadnanahmed01" target="_blank" rel="noopener">linkedin.com/in/sadnanahmed01</a>
+        |
+        <a href="https://syedadnan.dev">https://syedadnan.dev</a>
+      </p>
+      <hr>
 
-  <div class="job-header">
-    <span class="job-title">Virtuosoft | Solutions Architect &amp; DevOps Lead</span>
-  </div>
-  <div class="job-meta">Onsite / Remote | Nov 2023 - Feb 2025</div>
-  <ul>
-    <li><strong>AMAX Insurance (USA):</strong> Modernized automotive claims processing into an event-driven serverless
-      pipeline on AWS. Uploaded damage photos and police documents in Amazon S3 trigger AWS Lambda microservices
-      orchestrating Amazon Rekognition for damage triage and Amazon Textract for document OCR, routed via EventBridge
-      rules to reduce triage latency from multiple days to under 30 seconds.</li>
-    <li><strong>Grid Safety (Australia):</strong> Engineered containerized deployment infrastructure for an industrial
-      IoT safety platform. Configured Docker microservices on AWS ECS with GitHub Actions CI/CD pipelines, establishing
-      automated blue/green deployments with zero downtime.</li>
-    <li><strong>SD Foods (France):</strong> Designed hybrid logistics and perishable goods inventory architecture with
-      resilient synchronization and reporting.</li>
-    <li><strong>Neogies (France):</strong> Built distributed energy management platform with dynamic pricing calculation
-      engines and regulatory compliance.</li>
-  </ul>
+      <h2>Professional Summary</h2>
+      <p>
+        Principal Solutions Architect and Systems Engineer with 13+ years of experience designing and operating
+        high-reliability systems across financial services, healthcare networks, FMCG distribution, and cloud
+        infrastructure. Core expertise in distributed database synchronization, offline-first architectures, enterprise
+        identity (Okta SSO), serverless cloud pipelines (AWS), and high-throughput financial transactions (RTGS under
+        State
+        Bank of Pakistan mandate). Proven track record leading technical architectures that eliminate single points of
+        failure across enterprise and multi-tenant environments.
+      </p>
 
-  <div class="job-header">
-    <span class="job-title">English Biscuits Manufacturers (EBM) | Solutions Architect (Consultant)</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | May 2019 - Nov 2020</div>
-  <ul>
-    <li>Architected and led the implementation of a Demand-Based Replenishment (DBR) platform covering 100+ distributor
-      locations for Pakistan's leading biscuit manufacturer.</li>
-    <li>Automated end-to-end SAP sales order generation, reducing order processing turnaround time by 90%.</li>
-    <li>Authored integration technical specifications, data contracts, and field mappings; managed a team of 4 software
-      engineers from development through deployment.</li>
-  </ul>
+      <h2>Technical Skills</h2>
+      <div class="skills-list"><strong>Languages &amp; Frameworks:</strong> C#, .NET Core, ASP.NET, WinForms, WinUI3,
+        Web
+        APIs, Next.js, Node.js, TypeScript, JavaScript, SQL, Python</div>
+      <div class="skills-list"><strong>Cloud &amp; Serverless:</strong> AWS (Lambda, Rekognition, Textract, EventBridge,
+        S3,
+        DynamoDB, ECS), Azure (Functions, Azure SQL, Azure DevOps)</div>
+      <div class="skills-list"><strong>Databases:</strong> Microsoft SQL Server (Distributed Sync, Stored Procedures,
+        Triggers), PostgreSQL, Supabase, Redis</div>
+      <div class="skills-list"><strong>Enterprise &amp; Identity:</strong> Okta SSO, OAuth 2.0, OpenID Connect, RBAC,
+        Active
+        Directory, SAP RFC, PeopleSoft HRMS</div>
+      <div class="skills-list"><strong>Financial &amp; Integrations:</strong> SWIFT (MT102, MT103), SBP PRISM, Payment
+        Gateways (Mastercard), FBR Fiscal APIs, REST, SOAP</div>
+      <div class="skills-list"><strong>DevOps &amp; Infrastructure:</strong> Docker, Kubernetes, GitHub Actions, CI/CD
+        Pipelines, Distributed Systems, Edge Computing</div>
 
-  <div class="job-header">
-    <span class="job-title">Engro Corporation | Technical Lead (Consultant)</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | Aug 2018 - Jan 2019</div>
-  <ul>
-    <li>Led development of a Distributor Financial Claim Management System for one of Pakistan's largest industrial
-      conglomerates, optimizing .NET API throughput and reporting performance.</li>
-  </ul>
+      <h2>Professional Experience</h2>
 
-  <div class="job-header">
-    <span class="job-title">Bank Alfalah | Software Engineer (.NET)</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | Sep 2015 - Jul 2018</div>
-  <p class="company-desc">Engineered core banking infrastructure under State Bank of Pakistan (SBP) regulatory mandates.
-  </p>
+      <div class="job-header">
+        <span class="job-title">Turf | Founder &amp; Chief Solutions Architect</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | Feb 2019 - Present</div>
+      <p class="company-desc">Technology studio and engineering consultancy delivering systems for enterprise clients,
+        hospital networks, and retail brands.</p>
 
-  <p class="project-heading">Real-Time Gross Settlement (RTGS) &amp; PRI Remittance (2015 - 2018)</p>
-  <ul>
-    <li>Delivered Bank Alfalah's interbank gross settlement application connecting to SBP PRISM, enabling Bank Alfalah
-      to become the first commercial bank in Pakistan to go live under SBP mandate.</li>
-    <li>Processed thousands of daily high-value interbank transactions worth billions in daily settlement value across
-      all bank branches nationwide.</li>
-    <li>Engineered branch approval workflows with dynamic routing based on transaction value thresholds and SWIFT
-      message formats (MT102 and MT103).</li>
-    <li>Built Store-and-Forward (SAF) queues within background Windows Services to handle SBP PRISM communication
-      timeouts and eliminate unhandled transaction drops.</li>
-    <li>Production Incident Management: Developed custom real-time WinForms monitoring tools that detected an erroneous
-      transaction exceeding 200 Million PKR during pilot, alerting Treasury for immediate reversal before SBP settlement
-      finality.</li>
-    <li>Integrated Pakistan Remittance Initiative (PRI) channels near go-live, unifying domestic settlement and inbound
-      foreign remittances; successfully passed SBP compliance audit.</li>
-    <li>Consulted by technical representatives of a competing tier-1 bank to provide architectural guidance on their
-      RTGS implementation.</li>
-  </ul>
+      <p class="project-heading">Colgate-Palmolive Pakistan - Nationwide PSP Platform (2024 - Present)</p>
+      <div class="job-meta">Scoping Nov 2023 | Production Go-Live Nov 2024 | Active Ongoing Upgrades</div>
+      <ul>
+        <li>Architected the nationwide Permanent Sales Promotion (PSP) management platform for Colgate-Palmolive
+          Pakistan,
+          covering field operations and merchandising audit workflows across thousands of retail outlets nationwide.
+        </li>
+        <li>Implemented real-time mobile GPS validation with polygon geofencing to mathematically verify physical
+          promoter
+          presence at designated stores, preventing location spoofing and unverified audits.</li>
+        <li>Integrated corporate Okta SSO for centralized corporate identity federation, multi-tier authorization, and
+          role-based access control.</li>
+        <li>Built automated inventory allocation tracking and audit reconciliation reports for sales leadership.</li>
+      </ul>
 
-  <p class="project-heading">Alfalah Payment Gateway &amp; Orbit Loyalty Platform (2016 - 2018)</p>
-  <ul>
-    <li>Maintained and extended Bank Alfalah's Mastercard-integrated payment gateway processing hundreds of thousands of
-      e-commerce transactions with card tokenization and chargeback workflows.</li>
-    <li>Built the Burn (redemption) API layer, points calculation logic, and SSO integration for Alfalah Orbit Rewards
-      in collaboration with Mastercard.</li>
-  </ul>
+      <p class="project-heading">Aga Khan University Hospital - ERA Healthcare &amp; Commerce Platform (2019 - Present)
+      </p>
+      <ul>
+        <li>Deployed and scaled ERA across 40+ business units at Aga Khan University Hospital, including 24/7 hospital
+          pharmacies, dining facilities, and campus operations, with peak reach across 70+ retail businesses nationwide.
+        </li>
+        <li>Designed a distributed database synchronization engine using local MSSQL instances, stored procedure journal
+          queues, and background Windows sync services to maintain 100% offline terminal operation during external
+          internet
+          outages.</li>
+        <li>Maintained continuous 24/7/365 uptime for mission-critical hospital pharmacies without cash-desk stoppage.
+        </li>
+        <li>Designed lightweight WinForms client (ERA Lite) for lower-spec retail terminals, mentoring a junior
+          developer
+          who delivered the core client code during training.</li>
+        <li>Built a 30-second automated multi-tenant provisioning engine (database setup, instance configuration, custom
+          branding) during 2020 retail lockdowns, later migrating the front-end to a headless Netlify architecture.</li>
+        <li>Integrated PeopleSoft HRMS, SAP modules (Sales, Inventory, Warehouse), and FBR fiscal compliance APIs.</li>
+      </ul>
 
-  <div class="job-header">
-    <span class="job-title">Axis Solutions | Software Engineer</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | 2014 - 2015</div>
-  <ul>
-    <li>Developed FCMS (Faculty and Course Management System) for Aptech, automating faculty scheduling, course
-      allocations, and student batch timetables across education centers.</li>
-    <li>Built desktop database applications and inventory management tools using C#, WinForms, and Microsoft SQL Server
-      with parameterized stored procedures and Crystal Reports.</li>
-  </ul>
+      <div class="job-header">
+        <span class="job-title">RollUp | Founder &amp; Architect</span>
+      </div>
+      <div class="job-meta">Personal Project (rollup.eraconnect.net) | 2026 - Present</div>
+      <ul>
+        <li>Architected and launched RollUp in 2026, a micro-SaaS data aggregation and workflow productivity platform
+          built
+          for knowledge workers, targeting the US market.</li>
+        <li>Built with Next.js, Edge runtime, Supabase (PostgreSQL), Stripe billing integration, and Tailwind CSS.</li>
+      </ul>
 
-  <div class="job-header">
-    <span class="job-title">Aptech Computer Education | Faculty &amp; Technical Trainer</span>
-  </div>
-  <div class="job-meta">Karachi, Pakistan | Jun 2013 - Mar 2014</div>
-  <ul>
-    <li>Delivered technical training in C#, object-oriented programming (OOP), relational database design (SQL Server),
-      and software development principles.</li>
-    <li>Guided students through hands-on application development, code reviews, and software project defense.</li>
-  </ul>
+      <div class="job-header">
+        <span class="job-title">Virtuosoft | Solutions Architect &amp; DevOps Lead</span>
+      </div>
+      <div class="job-meta">Onsite / Remote | Nov 2023 - Feb 2025</div>
+      <ul>
+        <li><strong>AMAX Insurance (USA):</strong> Modernized automotive claims processing into an event-driven
+          serverless
+          pipeline on AWS. Uploaded damage photos and police documents in Amazon S3 trigger AWS Lambda microservices
+          orchestrating Amazon Rekognition for damage triage and Amazon Textract for document OCR, routed via
+          EventBridge
+          rules to reduce triage latency from multiple days to under 30 seconds.</li>
+        <li><strong>Grid Safety (Australia):</strong> Engineered containerized deployment infrastructure for an
+          industrial
+          IoT safety platform. Configured Docker microservices on AWS ECS with GitHub Actions CI/CD pipelines,
+          establishing
+          automated blue/green deployments with zero downtime.</li>
+        <li><strong>SD Foods (France):</strong> Designed hybrid logistics and perishable goods inventory architecture
+          with
+          resilient synchronization and reporting.</li>
+        <li><strong>Neogies (France):</strong> Built distributed energy management platform with dynamic pricing
+          calculation
+          engines and regulatory compliance.</li>
+      </ul>
 
-  <h2>Education</h2>
-  <p><strong>ACCP Pro - Software Engineering Diploma</strong> | APTECH Karachi | 2011 - 2015</p>
+      <div class="job-header">
+        <span class="job-title">English Biscuits Manufacturers (EBM) | Solutions Architect (Consultant)</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | May 2019 - Nov 2020</div>
+      <ul>
+        <li>Architected and led the implementation of a Demand-Based Replenishment (DBR) platform covering 100+
+          distributor
+          locations for Pakistan's leading biscuit manufacturer.</li>
+        <li>Automated end-to-end SAP sales order generation, reducing order processing turnaround time by 90%.</li>
+        <li>Authored integration technical specifications, data contracts, and field mappings; managed a team of 4
+          software
+          engineers from development through deployment.</li>
+      </ul>
 
+      <div class="job-header">
+        <span class="job-title">Engro Corporation | Technical Lead (Consultant)</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | Aug 2018 - Jan 2019</div>
+      <ul>
+        <li>Led development of a Distributor Financial Claim Management System for one of Pakistan's largest industrial
+          conglomerates, optimizing .NET API throughput and reporting performance.</li>
+      </ul>
+
+      <div class="job-header">
+        <span class="job-title">Bank Alfalah | Software Engineer (.NET)</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | Sep 2015 - Jul 2018</div>
+      <p class="company-desc">Engineered core banking infrastructure under State Bank of Pakistan (SBP) regulatory
+        mandates.</p>
+
+      <p class="project-heading">Real-Time Gross Settlement (RTGS) &amp; PRI Remittance (2015 - 2018)</p>
+      <ul>
+        <li>Delivered Bank Alfalah's interbank gross settlement application connecting to SBP PRISM, enabling Bank
+          Alfalah
+          to become the first commercial bank in Pakistan to go live under SBP mandate.</li>
+        <li>Processed thousands of daily high-value interbank transactions worth billions in daily settlement value
+          across
+          all bank branches nationwide.</li>
+        <li>Engineered branch approval workflows with dynamic routing based on transaction value thresholds and SWIFT
+          message formats (MT102 and MT103).</li>
+        <li>Built Store-and-Forward (SAF) queues within background Windows Services to handle SBP PRISM communication
+          timeouts and eliminate unhandled transaction drops.</li>
+        <li>Production Incident Management: Developed custom real-time WinForms monitoring tools that detected an
+          erroneous
+          transaction exceeding 200 Million PKR during pilot, alerting Treasury for immediate reversal before SBP
+          settlement
+          finality.</li>
+        <li>Integrated Pakistan Remittance Initiative (PRI) channels near go-live, unifying domestic settlement and
+          inbound
+          foreign remittances; successfully passed SBP compliance audit.</li>
+        <li>Consulted by technical representatives of a competing tier-1 bank to provide architectural guidance on their
+          RTGS implementation.</li>
+      </ul>
+
+      <p class="project-heading">Alfalah Payment Gateway &amp; Orbit Loyalty Platform (2016 - 2018)</p>
+      <ul>
+        <li>Maintained and extended Bank Alfalah's Mastercard-integrated payment gateway processing hundreds of
+          thousands of
+          e-commerce transactions with card tokenization and chargeback workflows.</li>
+        <li>Built the Burn (redemption) API layer, points calculation logic, and SSO integration for Alfalah Orbit
+          Rewards
+          in collaboration with Mastercard.</li>
+      </ul>
+
+      <div class="job-header">
+        <span class="job-title">Axis Solutions | Software Engineer</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | 2014 - 2015</div>
+      <ul>
+        <li>Developed FCMS (Faculty and Course Management System) for Aptech, automating faculty scheduling, course
+          allocations, and student batch timetables across education centers.</li>
+        <li>Built desktop database applications and inventory management tools using C#, WinForms, and Microsoft SQL
+          Server
+          with parameterized stored procedures and Crystal Reports.</li>
+      </ul>
+
+      <div class="job-header">
+        <span class="job-title">Aptech Computer Education | Faculty &amp; Technical Trainer</span>
+      </div>
+      <div class="job-meta">Karachi, Pakistan | Jun 2013 - Mar 2014</div>
+      <ul>
+        <li>Delivered technical training in C#, object-oriented programming (OOP), relational database design (SQL
+          Server),
+          and software development principles.</li>
+        <li>Guided students through hands-on application development, code reviews, and software project defense.</li>
+      </ul>
+
+      <h2>Education</h2>
+      <p><strong>ACCP Pro - Software Engineering Diploma</strong> | APTECH Karachi | 2011 - 2015</p>
+
+    </article>
+  </main>
+
+  <!-- Interactive E-Reader Controls Script -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const progressBar = document.getElementById('progress-bar');
+      const themeButtons = document.querySelectorAll('[data-set-theme]');
+      const fontButtons = document.querySelectorAll('[data-set-font]');
+      const btnSizeDec = document.getElementById('btn-size-dec');
+      const btnSizeInc = document.getElementById('btn-size-inc');
+      const btnPrint = document.getElementById('btn-print');
+
+      const SIZES = ['sm', 'md', 'lg', 'xl'];
+
+      // Restore saved preferences
+      const savedTheme = localStorage.getItem('epub_cv_theme') || 'paper';
+      let savedFont = localStorage.getItem('epub_cv_font') || 'montserrat';
+      if (savedFont === 'serif') savedFont = 'montserrat';
+      const savedSize = localStorage.getItem('epub_cv_size') || 'md';
+
+      applyTheme(savedTheme);
+      applyFont(savedFont);
+      applySize(savedSize);
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('epub_cv_theme', theme);
+        themeButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-set-theme') === theme);
+        });
+      }
+
+      function applyFont(font) {
+        root.setAttribute('data-font', font);
+        localStorage.setItem('epub_cv_font', font);
+        fontButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-set-font') === font);
+        });
+      }
+
+      function applySize(size) {
+        root.setAttribute('data-size', size);
+        localStorage.setItem('epub_cv_size', size);
+      }
+
+      // Event Listeners: Themes
+      themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyTheme(btn.getAttribute('data-set-theme'));
+        });
+      });
+
+      // Event Listeners: Fonts
+      fontButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyFont(btn.getAttribute('data-set-font'));
+        });
+      });
+
+      // Event Listeners: Font Size
+      btnSizeDec.addEventListener('click', () => {
+        const currentSize = root.getAttribute('data-size') || 'md';
+        const currentIndex = SIZES.indexOf(currentSize);
+        if (currentIndex > 0) {
+          applySize(SIZES[currentIndex - 1]);
+        }
+      });
+
+      btnSizeInc.addEventListener('click', () => {
+        const currentSize = root.getAttribute('data-size') || 'md';
+        const currentIndex = SIZES.indexOf(currentSize);
+        if (currentIndex < SIZES.length - 1) {
+          applySize(SIZES[currentIndex + 1]);
+        }
+      });
+
+      // Print
+      btnPrint.addEventListener('click', () => {
+        window.print();
+      });
+
+      // Reading Scroll Progress
+      window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+          const progress = (window.scrollY / totalHeight) * 100;
+          progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+        }
+      }, { passive: true });
+    })();
+  </script>
 </body>
 
 </html>
