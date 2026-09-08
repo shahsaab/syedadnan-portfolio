@@ -138,8 +138,9 @@
       <li><a href="#philosophy" class="mobile-nav-link">Philosophy</a></li>
     </ul>
     <div class="mobile-nav-actions">
-      <a href="cv.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">Executive CV ↗</a>
-      <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Connect / Hire</a>
+      <a href="cv.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">Executive
+        CV ↗</a>
+      <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Connect</a>
     </div>
   </div>
 
@@ -178,7 +179,8 @@
             <span class="metric-sub">Triage</span>
           </div>
           <div class="metric-label">AI-Powered Claims Platform</div>
-          <div class="metric-desc">Automated US insurance claims triage with event-driven AWS serverless, computer vision damage assessment, and document OCR.</div>
+          <div class="metric-desc">Automated US insurance claims triage with event-driven AWS serverless, computer
+            vision damage assessment, and document OCR.</div>
         </div>
 
         <div class="metric-card" style="--metric-color: var(--fintech);">
@@ -187,7 +189,8 @@
             <span class="metric-sub">+</span>
           </div>
           <div class="metric-label">National Settlement Platform</div>
-          <div class="metric-desc">Architected the backbone for nationwide daily interbank financial settlements, ensuring secure, high-value transaction flow for the central banking sector.</div>
+          <div class="metric-desc">Architected the backbone for nationwide daily interbank financial settlements,
+            ensuring secure, high-value transaction flow for the central banking sector.</div>
         </div>
 
         <div class="metric-card" style="--metric-color: var(--healthcare);">
@@ -196,7 +199,8 @@
             <span class="metric-sub">+ Nodes</span>
           </div>
           <div class="metric-label">Hospital Operations Platform</div>
-          <div class="metric-desc">Engineered resilient, offline-capable infrastructure for clinical networks, ensuring continuous 24/7 service delivery in high-stakes healthcare environments.</div>
+          <div class="metric-desc">Engineered resilient, offline-capable infrastructure for clinical networks, ensuring
+            continuous 24/7 service delivery in high-stakes healthcare environments.</div>
         </div>
 
         <div class="metric-card" style="--metric-color: var(--enterprise);">
@@ -204,7 +208,8 @@
             <span>Fortune 500</span>
           </div>
           <div class="metric-label">Enterprise FMCG Delivery</div>
-          <div class="metric-desc">Nationwide field operations platform for Colgate-Palmolive — polygon geofencing, real-time audit, and Okta SSO corporate identity. Launched Nov 2024.</div>
+          <div class="metric-desc">Nationwide field operations platform for Colgate-Palmolive — polygon geofencing,
+            real-time audit, and Okta SSO corporate identity. Launched Nov 2024.</div>
         </div>
       </div>
     </div>
@@ -218,11 +223,14 @@
           <div class="featured-ai-badge">★ FEATURED ARCHITECTURE · HIGH-GROWTH CLOUD & AI MODERNIZATION</div>
           <h2 class="section-title" style="margin-top: 12px;">AI-Powered Insurance Claims Processing Platform</h2>
           <p class="section-desc">
-            How an event-driven serverless architecture on AWS revolutionized claim triage for a US insurer — accelerating review turnaround from multiple days to under 30 seconds while eliminating infrastructure overhead.
+            How an event-driven serverless architecture on AWS revolutionized claim triage for a US insurer —
+            accelerating review turnaround from multiple days to under 30 seconds while eliminating infrastructure
+            overhead.
           </p>
         </div>
         <div>
-          <button class="btn btn-primary" onclick="openInspectionDrawer('NODE_04_AMAX')">Inspect Architecture Blueprint →</button>
+          <button class="btn btn-primary" onclick="openInspectionDrawer('NODE_04_AMAX')">Inspect Architecture Blueprint
+            →</button>
         </div>
       </div>
 
@@ -237,22 +245,29 @@
               </span>
               <span class="mono" style="font-size: 13px; color: var(--text-muted);">2023 – 2024</span>
             </div>
-            <h3 class="case-study-title" style="font-size: 26px;">Automating End-to-End Insurance Claim Triage with Vision & Document Intelligence</h3>
+            <h3 class="case-study-title" style="font-size: 26px;">Automating End-to-End Insurance Claim Triage with
+              Vision & Document Intelligence</h3>
             <div class="case-study-role">
               AMAX Insurance (USA) · <strong>Solutions Architect</strong>
             </div>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_04_AMAX')">Inspect Blueprint →</button>
+          <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_04_AMAX')">Inspect Blueprint
+            →</button>
         </div>
 
         <div class="case-study-body">
           <div>
             <div class="case-section-heading"><span>⬡ The Challenge & Serverless Solution</span></div>
             <p style="margin-bottom: 16px;">
-              Legacy automobile insurance claim workflows were plagued by manual data entry, human error in police report transcription, and slow damage assessments that took 3–5 business days. 
+              Legacy automobile insurance claim workflows were plagued by manual data entry, human error in police
+              report transcription, and slow damage assessments that took 3–5 business days.
             </p>
             <p style="margin-bottom: 16px;">
-              I architected a 100% serverless, event-driven ingestion and decision engine on AWS. When photos and police reports land in Amazon S3, an AWS Lambda orchestrator dispatches parallel workloads to Amazon Rekognition (for multi-angle vehicular damage classification) and Amazon Textract (for structured policy and police report OCR), feeding extracted signals into Amazon EventBridge for instant fast-track approval or adjuster escalation.
+              I architected a 100% serverless, event-driven ingestion and decision engine on AWS. When photos and police
+              reports land in Amazon S3, an AWS Lambda orchestrator dispatches parallel workloads to Amazon Rekognition
+              (for multi-angle vehicular damage classification) and Amazon Textract (for structured policy and police
+              report OCR), feeding extracted signals into Amazon EventBridge for instant fast-track approval or adjuster
+              escalation.
             </p>
 
             <!-- Architecture Infographic -->
@@ -278,21 +293,22 @@
                 style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
                 <span>▸ View Raw ASCII Dataflow Topology</span>
               </summary>
-              <div class="arch-diagram-box" style="margin-top: 8px;">[ Incident Photos & Police Reports ] ──> [ Amazon S3 Ingestion ]
-│
-▼
-[ AWS Lambda Orchestrator ]
-┌─────────────────────────┴─────────────────────────┐
-▼                                                   ▼
-[ Amazon Rekognition ]                    [ Amazon Textract ]
-(Vehicle Damage Vision)                   (Police Document OCR)
-└─────────────────────────┬─────────────────────────┘
-│
-▼
-[ EventBridge Decision Rules Engine ]
-┌─────────────────────────┴─────────────────────────┐
-▼                                                   ▼
-[ Fast-Track Instant Settlement ]         [ Routed to Specialist Adjuster ]</div>
+              <div class="arch-diagram-box" style="margin-top: 8px;">[ Incident Photos & Police Reports ] ──> [ Amazon
+                S3 Ingestion ]
+                │
+                ▼
+                [ AWS Lambda Orchestrator ]
+                ┌─────────────────────────┴─────────────────────────┐
+                ▼ ▼
+                [ Amazon Rekognition ] [ Amazon Textract ]
+                (Vehicle Damage Vision) (Police Document OCR)
+                └─────────────────────────┬─────────────────────────┘
+                │
+                ▼
+                [ EventBridge Decision Rules Engine ]
+                ┌─────────────────────────┴─────────────────────────┐
+                ▼ ▼
+                [ Fast-Track Instant Settlement ] [ Routed to Specialist Adjuster ]</div>
             </details>
           </div>
 
@@ -302,7 +318,9 @@
                 <span>✓ Slashed Claim Triage From Days to Under 30 Seconds</span>
               </div>
               <p style="font-size: 14px; line-height: 1.6;">
-                Automating vehicular damage extraction and optical document verification eliminated initial manual review backlogs. Validated claims with clear liability parameters are now fast-tracked in real time, drastically elevating customer retention and operational efficiency.
+                Automating vehicular damage extraction and optical document verification eliminated initial manual
+                review backlogs. Validated claims with clear liability parameters are now fast-tracked in real time,
+                drastically elevating customer retention and operational efficiency.
               </p>
             </div>
 
@@ -311,7 +329,8 @@
                 <span>⚡ Cost Optimization & Zero Infrastructure Ops</span>
               </div>
               <p style="font-size: 14px; line-height: 1.6;">
-                By adopting a pure pay-per-execution serverless model with Amazon Lambda and S3, the platform scales dynamically during high-incident storms without running costly idle EC2 clusters during off-peak hours.
+                By adopting a pure pay-per-execution serverless model with Amazon Lambda and S3, the platform scales
+                dynamically during high-incident storms without running costly idle EC2 clusters during off-peak hours.
               </p>
             </div>
 
@@ -343,13 +362,15 @@
           <div class="section-eyebrow">Enterprise & National Infrastructure</div>
           <h2 class="section-title">Mission-Critical Systems That Cannot Fail</h2>
           <p class="section-desc">
-            Deep-dive production case studies demonstrating architectural decision-making under zero-failure constraints.
+            Deep-dive production case studies demonstrating architectural decision-making under zero-failure
+            constraints.
           </p>
         </div>
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
           <button class="btn btn-primary btn-sm" id="toggle-case-studies-btn" aria-expanded="false">
             <span id="toggle-case-studies-text">Expand 3 Case Studies</span>
-            <span id="toggle-case-studies-icon" style="margin-left: 6px; display: inline-block; transition: transform 0.3s ease;">▼</span>
+            <span id="toggle-case-studies-icon"
+              style="margin-left: 6px; display: inline-block; transition: transform 0.3s ease;">▼</span>
           </button>
           <a href="projects.html" class="btn btn-outline btn-sm">All 20 Systems ↗</a>
         </div>
@@ -359,12 +380,19 @@
       <div class="case-studies-toggle-banner" id="case-studies-toggle-banner">
         <div class="toggle-banner-content">
           <div class="toggle-banner-chips">
-            <span class="tech-tag" style="background: rgba(139, 94, 10, 0.10); color: var(--fintech); font-weight: 600;">🏛️ National Settlement (RTGS)</span>
-            <span class="tech-tag" style="background: rgba(158, 42, 91, 0.10); color: var(--healthcare); font-weight: 600;">🏥 Hospital Platform (40+ Nodes)</span>
-            <span class="tech-tag" style="background: rgba(26, 85, 117, 0.10); color: var(--enterprise); font-weight: 600;">🏢 Colgate-Palmolive (Okta SSO)</span>
+            <span class="tech-tag"
+              style="background: rgba(139, 94, 10, 0.10); color: var(--fintech); font-weight: 600;">🏛️ National
+              Settlement (RTGS)</span>
+            <span class="tech-tag"
+              style="background: rgba(158, 42, 91, 0.10); color: var(--healthcare); font-weight: 600;">🏥 Hospital
+              Platform (40+ Nodes)</span>
+            <span class="tech-tag"
+              style="background: rgba(26, 85, 117, 0.10); color: var(--enterprise); font-weight: 600;">🏢
+              Colgate-Palmolive (Okta SSO)</span>
           </div>
           <p style="margin: 8px 0 0 0; font-size: 14px; color: var(--text-secondary);">
-            Explore verified enterprise case studies detailing architecture blueprints, raw dataflow topologies, and audit records.
+            Explore verified enterprise case studies detailing architecture blueprints, raw dataflow topologies, and
+            audit records.
           </p>
         </div>
         <button class="btn btn-secondary btn-sm" id="banner-expand-btn">
@@ -391,14 +419,17 @@
                 Bank Alfalah & State Bank of Pakistan · <strong>Software Engineer (.NET / Architecture)</strong>
               </div>
             </div>
-            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_01_RTGS')">Inspect Blueprint →</button>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_01_RTGS')">Inspect Blueprint
+              →</button>
           </div>
 
           <div class="case-study-body">
             <div>
               <div class="case-section-heading"><span>⬡ The Context & Architecture</span></div>
               <p style="margin-bottom: 16px;">
-                I led the technical implementation for a mandatory national payment system integration. This infrastructure required seamless communication between commercial banking systems and the central bank's settlement network to ensure immediate finality for large-value transfers.
+                I led the technical implementation for a mandatory national payment system integration. This
+                infrastructure required seamless communication between commercial banking systems and the central bank's
+                settlement network to ensure immediate finality for large-value transfers.
               </p>
 
               <!-- Architecture Infographic -->
@@ -425,26 +456,27 @@
                   <span>▸ View Raw ASCII Dataflow Topology</span>
                 </summary>
                 <div class="arch-diagram-box" style="margin-top: 8px;">Branch Staff ──> Branch Manager Approval
-│
-▼
-Treasury Back-Office (Dual Approval)
-│
-▼
-Background Processing Windows Service
-│
-┌────────────┴────────────┐
-▼                         ▼
-SWIFT MT102/103 Creation  Store-and-Forward (SAF) Queue
-│                         │
-▼                         ▼
-SBP PRISM Server ◄────── (Retry / No Silent Loss)
-│
-▼
-Account Settlement: Requestor ──> GL + Taxes + FED</div>
+                  │
+                  ▼
+                  Treasury Back-Office (Dual Approval)
+                  │
+                  ▼
+                  Background Processing Windows Service
+                  │
+                  ┌────────────┴────────────┐
+                  ▼ ▼
+                  SWIFT MT102/103 Creation Store-and-Forward (SAF) Queue
+                  │ │
+                  ▼ ▼
+                  SBP PRISM Server ◄────── (Retry / No Silent Loss)
+                  │
+                  ▼
+                  Account Settlement: Requestor ──> GL + Taxes + FED</div>
               </details>
 
               <p style="margin-top: 16px; font-size: 14px;">
-                The project evolved into a critical dual-purpose platform, integrating international remittance channels to support government-backed initiatives for secure, official fund transfers.
+                The project evolved into a critical dual-purpose platform, integrating international remittance channels
+                to support government-backed initiatives for secure, official fund transfers.
               </p>
             </div>
 
@@ -454,7 +486,9 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>⚡ The ₨200 Million Pilot Incident</span>
                 </div>
                 <p style="font-size: 14px; line-height: 1.6;">
-                  During the pilot phase, I identified a significant routing anomaly involving a ₨200 Million transaction. My custom-built real-time monitoring utilities enabled proactive detection, allowing Treasury to intervene and reverse the transaction before final settlement occurred.
+                  During the pilot phase, I identified a significant routing anomaly involving a ₨200 Million
+                  transaction. My custom-built real-time monitoring utilities enabled proactive detection, allowing
+                  Treasury to intervene and reverse the transaction before final settlement occurred.
                 </p>
               </div>
 
@@ -463,7 +497,9 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>✓ First to Go Live & Competitor Consultation</span>
                 </div>
                 <p style="font-size: 14px; line-height: 1.6;">
-                  Bank Alfalah became the first commercial bank to achieve compliance and go live. My success led to consultative requests from peer financial institutions struggling with their own integration requirements.
+                  Bank Alfalah became the first commercial bank to achieve compliance and go live. My success led to
+                  consultative requests from peer financial institutions struggling with their own integration
+                  requirements.
                 </p>
               </div>
 
@@ -501,14 +537,17 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                 Aga Khan University Hospital (AKU) & Turf · <strong>Co-Founder & Chief Solutions Architect</strong>
               </div>
             </div>
-            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_02_ERA')">Inspect Blueprint →</button>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_02_ERA')">Inspect Blueprint
+              →</button>
           </div>
 
           <div class="case-study-body">
             <div>
               <div class="case-section-heading"><span>⬡ Building Operations for Resilient Infrastructure</span></div>
               <p style="margin-bottom: 16px;">
-                Deploying software across varied clinical environments highlighted a core necessity: systems must maintain operational continuity even when connectivity is intermittent. I designed an architecture capable of self-recovering from network volatility.
+                Deploying software across varied clinical environments highlighted a core necessity: systems must
+                maintain operational continuity even when connectivity is intermittent. I designed an architecture
+                capable of self-recovering from network volatility.
               </p>
 
               <!-- Architecture Infographic -->
@@ -535,18 +574,19 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>▸ View Raw ASCII Dataflow Topology</span>
                 </summary>
                 <div class="arch-diagram-box" style="margin-top: 8px;">[ Cloud Master (Azure) ]
-  └── Primary MSSQL Master Database
-             ▲
-             │ [ Bi-Directional Custom Windows Sync Service ]
-             │ (Stored Procedures, Journal Queue, Conflict Resolution)
-             ▼
-[ Edge Terminals: AKU Hospital Pharmacies & Clinics ]
-  ├── Local MSSQL Instance (Zero-Latency Local Transaction Commit)
-  └── WinUI3 / WinForms Terminal (100% Offline Capability)</div>
+                  └── Primary MSSQL Master Database
+                  ▲
+                  │ [ Bi-Directional Custom Windows Sync Service ]
+                  │ (Stored Procedures, Journal Queue, Conflict Resolution)
+                  ▼
+                  [ Edge Terminals: AKU Hospital Pharmacies & Clinics ]
+                  ├── Local MSSQL Instance (Zero-Latency Local Transaction Commit)
+                  └── WinUI3 / WinForms Terminal (100% Offline Capability)</div>
               </details>
 
               <p style="margin-top: 16px; font-size: 14px;">
-                I moved away from cloud-dependent web architectures, opting for a distributed database topology that ensures edge nodes remain fully functional even during infrastructure blackouts.
+                I moved away from cloud-dependent web architectures, opting for a distributed database topology that
+                ensures edge nodes remain fully functional even during infrastructure blackouts.
               </p>
             </div>
 
@@ -556,7 +596,9 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>👥 Mentorship & Scalability</span>
                 </div>
                 <p style="font-size: 14px; line-height: 1.6;">
-                  I architected "ERA Lite" to support smaller retail operators, utilizing the same core reliability principles. This initiative provided a platform for mentorship, allowing talented apprentices to contribute to commercial-grade software delivery.
+                  I architected "ERA Lite" to support smaller retail operators, utilizing the same core reliability
+                  principles. This initiative provided a platform for mentorship, allowing talented apprentices to
+                  contribute to commercial-grade software delivery.
                 </p>
               </div>
 
@@ -565,7 +607,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>✓ 40+ Aga Khan University Hospital Nodes</span>
                 </div>
                 <p style="font-size: 14px; line-height: 1.6;">
-                  The system powers 40+ locations across Aga Khan University Hospital, maintaining 24/7 uptime for pharmacy and clinical operations, even through significant utility blackouts.
+                  The system powers 40+ locations across Aga Khan University Hospital, maintaining 24/7 uptime for
+                  pharmacy and clinical operations, even through significant utility blackouts.
                 </p>
               </div>
 
@@ -596,21 +639,24 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   style="background: rgba(26, 85, 117, 0.12); color: var(--enterprise); border: 1px solid rgba(26, 85, 117, 0.3);">
                   ENTERPRISE FMCG · SUPPLY CHAIN
                 </span>
-                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2024 – Present (Go-Live Nov 2024)</span>
+                <span class="mono" style="font-size: 13px; color: var(--text-muted);">2024 – Present (Go-Live Nov
+                  2024)</span>
               </div>
               <h3 class="case-study-title">Colgate-Palmolive — Nationwide Field Operations & Identity Management</h3>
               <div class="case-study-role">
                 Colgate-Palmolive Pakistan (Delivered by Turf) · <strong>Principal Solutions Architect</strong>
               </div>
             </div>
-            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_03_COLGATE')">Inspect Blueprint →</button>
+            <button class="btn btn-secondary btn-sm" onclick="openInspectionDrawer('NODE_03_COLGATE')">Inspect Blueprint
+              →</button>
           </div>
 
           <div class="case-study-body">
             <div>
               <div class="case-section-heading"><span>⬡ The Enterprise Challenge</span></div>
               <p style="margin-bottom: 16px;">
-                Colgate-Palmolive needed a unified solution to manage field-level promotional activities. The existing process suffered from reconciliation gaps and lack of verified proof of presence at retail locations.
+                Colgate-Palmolive needed a unified solution to manage field-level promotional activities. The existing
+                process suffered from reconciliation gaps and lack of verified proof of presence at retail locations.
               </p>
 
               <!-- Architecture Infographic -->
@@ -636,16 +682,17 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   style="font-size: 12px; color: var(--text-muted); cursor: pointer; padding: 4px 0; user-select: none;">
                   <span>▸ View Raw ASCII Dataflow Topology</span>
                 </summary>
-                <div class="arch-diagram-box" style="margin-top: 8px;">[ Merchandiser Mobile App ] ──> [ Real-Time GPS Coordinates ]
-│
-▼
-[ Store Polygon Geofence Engine ] ──> [ Fraud / Teleport Filter ]
-│
-▼
-[ Enterprise ASP.NET Platform ] ◄─── [ Corporate Okta SSO ]
-│
-▼
-[ Automated Campaign Allocation & Audit Analytics ]</div>
+                <div class="arch-diagram-box" style="margin-top: 8px;">[ Merchandiser Mobile App ] ──> [ Real-Time GPS
+                  Coordinates ]
+                  │
+                  ▼
+                  [ Store Polygon Geofence Engine ] ──> [ Fraud / Teleport Filter ]
+                  │
+                  ▼
+                  [ Enterprise ASP.NET Platform ] ◄─── [ Corporate Okta SSO ]
+                  │
+                  ▼
+                  [ Automated Campaign Allocation & Audit Analytics ]</div>
               </details>
             </div>
 
@@ -655,7 +702,9 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
                   <span>✓ Go-Live Nov 2024 & Ongoing Evolution</span>
                 </div>
                 <p style="font-size: 14px; line-height: 1.6;">
-                  We launched a production-grade platform that integrates geofencing, verified field telemetry, and corporate identity management using Okta SSO. The system provides real-time audit capabilities for promotional collateral and staff attendance across the country.
+                  We launched a production-grade platform that integrates geofencing, verified field telemetry, and
+                  corporate identity management using Okta SSO. The system provides real-time audit capabilities for
+                  promotional collateral and staff attendance across the country.
                 </p>
               </div>
 
@@ -682,16 +731,20 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
       <!-- De-cluttered Landing Page Bridge to Complete 20-Project Record -->
       <div class="record-bridge-card">
         <div class="case-study-meta">
-          <span class="case-study-pill" style="background: rgba(26, 85, 117, 0.1); color: var(--enterprise); border: 1px solid rgba(26, 85, 117, 0.25);">
+          <span class="case-study-pill"
+            style="background: rgba(26, 85, 117, 0.1); color: var(--enterprise); border: 1px solid rgba(26, 85, 117, 0.25);">
             COMPLETE ARCHITECTURAL INVENTORY · 2013 – 2026
           </span>
         </div>
         <h3>Looking for the Full Systems Topology & Project Record?</h3>
         <p>
-          Beyond these flagship architectures, I have engineered 20 documented production systems spanning national financial rails, FMCG supply networks, and cloud SaaS platforms. Explore the full interactive systems topology map and complete paginated project matrix.
+          Beyond these flagship architectures, I have engineered 20 documented production systems spanning national
+          financial rails, FMCG supply networks, and cloud SaaS platforms. Explore the full interactive systems topology
+          map and complete paginated project matrix.
         </p>
         <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
-          <a href="projects.html" class="btn btn-primary btn-lg">Explore Full Project Record & Systems Map (20 Systems) →</a>
+          <a href="projects.html" class="btn btn-primary btn-lg">Explore Full Project Record & Systems Map (20 Systems)
+            →</a>
           <a href="cv.html" target="_blank" class="btn btn-outline btn-lg">View Executive CV ↗</a>
         </div>
       </div>
@@ -794,7 +847,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
         <div class="section-eyebrow">Professional Philosophy</div>
         <h2 class="section-title">Architecting for Reliability</h2>
         <p class="section-desc">
-          Thirteen years of delivering systems for high-stakes environments has defined my architectural perspective. I prioritize visibility, recoverability, and long-term maintainability over transient industry trends.
+          Thirteen years of delivering systems for high-stakes environments has defined my architectural perspective. I
+          prioritize visibility, recoverability, and long-term maintainability over transient industry trends.
         </p>
       </div>
 
@@ -803,7 +857,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
           <div class="philosophy-num">// 01</div>
           <h3 class="philosophy-title">Outcomes Drive Architecture</h3>
           <p class="philosophy-text">
-            Meaningful systems are defined by their ability to deliver consistent results in production. My architectural choices are validated by real-world performance, operational reliability, and client success.
+            Meaningful systems are defined by their ability to deliver consistent results in production. My
+            architectural choices are validated by real-world performance, operational reliability, and client success.
           </p>
         </div>
 
@@ -811,7 +866,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
           <div class="philosophy-num">// 02</div>
           <h3 class="philosophy-title">Observability is Mandatory</h3>
           <p class="philosophy-text">
-            Silent failures are unacceptable in complex systems. My design methodology mandates deep observability, ensuring that all failures are immediately detected, logged, and recoverable.
+            Silent failures are unacceptable in complex systems. My design methodology mandates deep observability,
+            ensuring that all failures are immediately detected, logged, and recoverable.
           </p>
         </div>
 
@@ -819,7 +875,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
           <div class="philosophy-num">// 03</div>
           <h3 class="philosophy-title">Resilience by Design</h3>
           <p class="philosophy-text">
-            Robust architecture assumes infrastructure volatility. By designing for self-recovery and distributed reliability, my systems maintain continuity in challenging environments where typical architectures fail.
+            Robust architecture assumes infrastructure volatility. By designing for self-recovery and distributed
+            reliability, my systems maintain continuity in challenging environments where typical architectures fail.
           </p>
         </div>
 
@@ -827,7 +884,8 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
           <div class="philosophy-num">// 04</div>
           <h3 class="philosophy-title">Compliance Through Transparency</h3>
           <p class="philosophy-text">
-            Architecture must be audit-ready by default. I prioritize clean, documented designs that simplify compliance reviews and provide long-term operational clarity for stakeholders and regulatory bodies.
+            Architecture must be audit-ready by default. I prioritize clean, documented designs that simplify compliance
+            reviews and provide long-term operational clarity for stakeholders and regulatory bodies.
           </p>
         </div>
       </div>
@@ -841,7 +899,7 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
           <span class="status-dot"></span>
           <span class="mono" style="font-size: 12px; color: #059669; font-weight: 700; letter-spacing: 1px;">
-            ACCEPTING NEW OPPORTUNITIES
+            ACTIVELY BUILDING
           </span>
         </div>
 
@@ -850,7 +908,9 @@ Account Settlement: Requestor ──> GL + Taxes + FED</div>
         </h2>
 
         <p style="font-size: 16px; color: var(--text-secondary); max-width: 700px; line-height: 1.6;">
-          I am currently open to high-impact senior leadership roles — including Principal Solutions Architect, CTO, or VP of Engineering — and select executive consulting engagements where deep technical expertise can drive organizational success.
+          I am currently open to high-impact senior leadership roles — including Principal Solutions Architect, CTO, or
+          VP of Engineering — and select executive consulting engagements where deep technical expertise can drive
+          organizational success.
         </p>
 
         <div class="contact-grid">
