@@ -1,0 +1,703 @@
+/* ==========================================================================
+   SYED ADNAN AHMED — PROFESSIONAL THEME OVERRIDE
+   Aesthetic: Architect's Notebook · Editorial · Executive
+   Loads AFTER style.css — overrides color system only.
+   ========================================================================== */
+
+/* ─────────────────────────────────────────────
+   GOOGLE FONTS  (Montserrat for clean, modern executive headings)
+   ───────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────
+   1. DESIGN TOKENS — LIGHT NOTEBOOK PALETTE
+   ───────────────────────────────────────────── */
+
+:root {
+  /* Core Backgrounds */
+  --bg-space:        #F5F0E8;
+  --bg-primary:      #F8F5EF;
+  --bg-surface:      #FFFFFF;
+  --bg-card:         #FAFAF8;
+  --bg-card-hover:   #F2EDE2;
+  --bg-elevated:     #FFFFFF;
+  --bg-glass:        rgba(248, 245, 239, 0.92);
+  --bg-glass-heavy:  rgba(248, 245, 239, 0.98);
+
+  /* Borders & Dividers */
+  --border-subtle:   rgba(60, 50, 30, 0.09);
+  --border-medium:   rgba(60, 50, 30, 0.16);
+  --border-bright:   rgba(26, 74, 105, 0.45);
+
+  /* Typography Colors */
+  --text-primary:    #1A1A2A;
+  --text-secondary:  #3D3D50;
+  --text-muted:      #6B6B80;
+  --text-dim:        #9A9AAA;
+
+  /* Domain Accents — muted, professional editions */
+  --fintech:          #8B5E0A;   /* muted amber/bronze */
+  --fintech-glow:     rgba(139, 94, 10, 0.08);
+  --healthcare:       #9E2A5B;   /* muted deep rose */
+  --healthcare-glow:  rgba(158, 42, 91, 0.07);
+  --enterprise:       #1A5575;   /* deep teal */
+  --enterprise-glow:  rgba(26, 85, 117, 0.08);
+  --cloud:            #4B3182;   /* deep purple */
+  --cloud-glow:       rgba(75, 49, 130, 0.07);
+  --products:         #1A6145;   /* deep emerald */
+  --products-glow:    rgba(26, 97, 69, 0.07);
+
+  /* Typography — Montserrat for modern architectural authority */
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'Space Mono', SFMono-Regular, Consolas, monospace;
+
+  /* Shadows — lighter, crisp paper-shadow */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ─────────────────────────────────────────────
+   2. BODY & PAGE BACKGROUND
+   ───────────────────────────────────────────── */
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Subtle paper-grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────
+   3. HEADER / NAV
+   ───────────────────────────────────────────── */
+
+.header {
+  background: rgba(248, 245, 239, 0.96);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+
+.brand-badge {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+}
+
+.brand-name {
+  color: var(--text-primary);
+}
+
+.brand-title {
+  color: var(--text-muted);
+}
+
+.nav-dropdown-trigger {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-medium);
+  background: transparent;
+}
+
+.nav-dropdown-trigger:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.nav-dropdown-menu {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-lg);
+}
+
+.dropdown-header {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dropdown-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.dropdown-item-title {
+  color: var(--text-primary);
+}
+
+.dropdown-item-desc {
+  color: var(--text-muted);
+}
+
+.status-pill {
+  background: rgba(26, 97, 69, 0.08);
+  border: 1px solid rgba(26, 97, 69, 0.2);
+  color: var(--products);
+  box-shadow: none;
+}
+
+.status-dot {
+  background: var(--products);
+  box-shadow: none;
+  animation: none;
+}
+
+/* ─────────────────────────────────────────────
+   4. FLOATING TIMELINE DOCK
+   ───────────────────────────────────────────── */
+
+.timeline-nav-dock {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dock-inner {
+  background: rgba(248, 245, 239, 0.95) !important;
+  border: 1px solid var(--border-medium) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 10px 30px rgba(60, 50, 30, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.dock-link {
+  color: var(--text-secondary) !important;
+}
+
+.dock-link:hover,
+.dock-link.active {
+  color: var(--enterprise) !important;
+  background: rgba(26, 85, 117, 0.08) !important;
+}
+
+.dock-divider {
+  color: var(--border-medium) !important;
+}
+
+/* ─────────────────────────────────────────────
+   5. HERO
+   ───────────────────────────────────────────── */
+
+/* Hide the particle canvas — clean notebook aesthetic */
+.circuit-canvas {
+  display: none !important;
+}
+
+.hero-tag {
+  background: rgba(26, 85, 117, 0.06);
+  border: 1px solid rgba(26, 85, 117, 0.2);
+  color: var(--enterprise);
+}
+
+.hero-tag-indicator {
+  background: var(--enterprise);
+  box-shadow: none;
+}
+
+/* Ink-on-paper gradient for main headline */
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, #1A1A2A 30%, #3D3D50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Distinguished deep-teal accent on "cannot afford to fail." */
+.hero-title .highlight-text {
+  background: linear-gradient(135deg, #1A5575 0%, #4B3182 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  color: var(--text-secondary);
+}
+
+.hero-subtitle strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────
+   6. BUTTONS
+   ───────────────────────────────────────────── */
+
+.btn-primary {
+  background: linear-gradient(135deg, #1A5575, #0f3a51);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(26, 85, 117, 0.28);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1e6589, #1A5575);
+  box-shadow: 0 6px 20px rgba(26, 85, 117, 0.4);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--enterprise);
+  color: var(--enterprise);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+  border-color: var(--enterprise);
+  color: var(--enterprise);
+  background: rgba(26, 85, 117, 0.05);
+}
+
+/* ─────────────────────────────────────────────
+   7. METRIC CARDS
+   ───────────────────────────────────────────── */
+
+.metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-card);
+}
+
+.metric-value {
+  color: var(--metric-color);
+}
+
+.metric-label {
+  color: var(--text-primary);
+}
+
+.metric-desc {
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────
+   8. SECTION HEADERS & EYEBROWS
+   ───────────────────────────────────────────── */
+
+.section-eyebrow {
+  background: rgba(26, 85, 117, 0.07);
+  border: 1px solid rgba(26, 85, 117, 0.18);
+  color: var(--enterprise);
+}
+
+.section-title {
+  color: var(--text-primary);
+}
+
+.section-desc {
+  color: var(--text-secondary);
+}
+
+/* ─────────────────────────────────────────────
+   9. TOPOLOGY MAP / NODES SECTION
+   ───────────────────────────────────────────── */
+
+.map-canvas-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.map-toolbar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--bg-card-hover);
+  border-color: var(--enterprise);
+  color: var(--enterprise);
+}
+
+.search-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.map-status-bar {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+/* Node Cards */
+.node-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.node-card:hover {
+  background: var(--bg-card);
+  border-color: var(--node-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.node-header {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.node-title {
+  color: var(--text-primary);
+}
+
+.node-subtitle {
+  color: var(--text-muted);
+}
+
+.node-body {
+  color: var(--text-secondary);
+}
+
+.tech-tag {
+  background: rgba(60, 50, 30, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.node-panel-overlay {
+  background: rgba(248, 245, 239, 0.7);
+}
+
+.node-detail-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-lg);
+}
+
+.panel-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-close {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────
+   10. CASE STUDIES
+   ───────────────────────────────────────────── */
+
+.case-study-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.case-study-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cs-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cs-company-badge {
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.cs-impact-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.cs-impact-value {
+  color: var(--text-primary);
+}
+
+.cs-impact-label {
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────
+   11. PRODUCTS / SAAS SECTION
+   ───────────────────────────────────────────── */
+
+.product-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ─────────────────────────────────────────────
+   12. PHILOSOPHY SECTION
+   ───────────────────────────────────────────── */
+
+.philosophy-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.philosophy-card::before {
+  background: linear-gradient(to bottom, var(--enterprise), transparent);
+}
+
+/* ─────────────────────────────────────────────
+   13. CAREER / PROJECT MATRIX TABLE
+   ───────────────────────────────────────────── */
+
+.matrix-container {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.matrix-toolbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.matrix-table {
+  background: var(--bg-surface) !important;
+  width: 100%;
+}
+
+.matrix-table th {
+  background: #EFE9DE !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-medium) !important;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.matrix-table td {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+}
+
+.matrix-table tr:hover td {
+  background: var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+.matrix-project-title {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.matrix-client {
+  color: var(--text-muted) !important;
+}
+
+/* Matrix pagination controls */
+.pagination-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.pagination-btn:hover {
+  border-color: var(--enterprise);
+  color: var(--enterprise);
+}
+
+.pagination-btn.active {
+  background: var(--enterprise);
+  border-color: var(--enterprise);
+  color: #FFFFFF;
+}
+
+/* ─────────────────────────────────────────────
+   FEATURED AI CASE STUDY & RECORD BRIDGE
+   ───────────────────────────────────────────── */
+
+.featured-ai-card {
+  border: 2px solid rgba(75, 49, 130, 0.35) !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8FC 100%) !important;
+  box-shadow: 0 12px 36px rgba(75, 49, 130, 0.10), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  position: relative;
+}
+
+.featured-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(75, 49, 130, 0.10);
+  border: 1px solid rgba(75, 49, 130, 0.28);
+  color: var(--cloud);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.record-bridge-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.record-bridge-card h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.record-bridge-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────
+   14. CONTACT / CTA SECTION
+   ───────────────────────────────────────────── */
+
+.contact-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-link {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.contact-link:hover {
+  border-color: var(--enterprise);
+  color: var(--enterprise);
+  background: rgba(26, 85, 117, 0.05);
+}
+
+/* ─────────────────────────────────────────────
+   15. FOOTER
+   ───────────────────────────────────────────── */
+
+.footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.footer-brand {
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────────
+   16. MOBILE NAV DRAWER (light)
+   ───────────────────────────────────────────── */
+
+.mobile-nav {
+  background: rgba(248, 245, 239, 0.98);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-nav-link {
+  color: var(--text-secondary);
+}
+
+.mobile-nav-link:hover {
+  color: var(--enterprise);
+}
+
+/* ─────────────────────────────────────────────
+   17. SCROLLBAR (light style)
+   ───────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(60, 50, 30, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(60, 50, 30, 0.40);
+}
+
+/* ─────────────────────────────────────────────
+   18. SELECTION
+   ───────────────────────────────────────────── */
+
+::selection {
+  background: rgba(26, 85, 117, 0.18);
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────────
+   19. INFOGRAPHIC IMAGES — ADAPT FOR LIGHT MODE
+   Give dark infographics a subtle lift + slight muting
+   ───────────────────────────────────────────── */
+
+.case-study-infographic img,
+.cs-image img,
+img[src*="infographic"] {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  /* Slightly reduce brightness to soften dark images on cream */
+  filter: brightness(0.92) contrast(0.97);
+}
