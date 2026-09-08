@@ -294,6 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavDropdown();
   initInfographicLightbox();
   initScrollSpy();
+  initCaseStudiesCollapse();
 });
 
 // Render the Systems Map Node Cards
@@ -861,3 +862,53 @@ function closeInfographicLightbox() {
   lightbox.classList.remove("active");
   lightbox.setAttribute("aria-hidden", "true");
 }
+
+// Collapsible Case Studies Controller
+function initCaseStudiesCollapse() {
+  const container = document.getElementById("collapsible-case-studies");
+  const toggleBtn = document.getElementById("toggle-case-studies-btn");
+  const bannerBtn = document.getElementById("banner-expand-btn");
+  const toggleText = document.getElementById("toggle-case-studies-text");
+  const toggleIcon = document.getElementById("toggle-case-studies-icon");
+  const banner = document.getElementById("case-studies-toggle-banner");
+
+  if (!container) return;
+
+  let isExpanded = false;
+
+  function toggle(expand) {
+    isExpanded = typeof expand === "boolean" ? expand : !isExpanded;
+    if (isExpanded) {
+      container.style.display = "flex";
+      if (toggleText) toggleText.textContent = "Collapse Case Studies";
+      if (toggleIcon) toggleIcon.style.transform = "rotate(180deg)";
+      if (bannerBtn) bannerBtn.innerHTML = `<span>Collapse Case Studies</span> <span style="margin-left:6px;">▲</span>`;
+      if (banner) banner.classList.add("expanded");
+    } else {
+      container.style.display = "none";
+      if (toggleText) toggleText.textContent = "Expand 3 Case Studies";
+      if (toggleIcon) toggleIcon.style.transform = "rotate(0deg)";
+      if (bannerBtn) bannerBtn.innerHTML = `<span>Expand Case Studies</span> <span style="margin-left:6px;">▼</span>`;
+      if (banner) banner.classList.remove("expanded");
+    }
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => toggle());
+  }
+
+  if (bannerBtn) {
+    bannerBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggle();
+    });
+  }
+
+  if (banner) {
+    banner.addEventListener("click", () => toggle());
+  }
+
+  // Set default state: collapsed
+  toggle(false);
+}
+
